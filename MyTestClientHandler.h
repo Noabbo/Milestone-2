@@ -13,7 +13,7 @@ using namespace std;
 class MyTestClientHandler : public ClientHandler {
 StringReverser solver;
 public:
-    virtual void handleClient(int socket, istream in, ostream out);
+    virtual void handleClient(int socket, sockaddr_in address, istream in, ostream out);
 };
 
 

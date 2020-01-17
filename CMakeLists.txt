@@ -3,4 +3,4 @@ project(Milestone_2)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(Milestone_2 main.cpp Solver.cpp Solver.h ClientHandler.cpp ClientHandler.h MyTestClientHandler.cpp MyTestClientHandler.h StringReverser.cpp StringReverser.h)
+add_executable(Milestone_2 main.cpp Solver.cpp Solver.h ClientHandler.cpp ClientHandler.h MyTestClientHandler.cpp MyTestClientHandler.h StringReverser.cpp StringReverser.h Searcher.cpp Searcher.h Searchable.cpp Searchable.h)
