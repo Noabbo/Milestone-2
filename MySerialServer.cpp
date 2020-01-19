@@ -32,10 +32,8 @@ void MySerialServer::open(int port, ClientHandler clientHandler) {
         if (client_socket == -1) {
             throw "Error- didn't accept client";
         }
-        //See if we need to use thread into our server
-        //seeing how the client handler work
     }
-   /* // The server keep listening to the client.
+    // The server keep listening to the client.
     while (ServerExist) {
         //Wait to listen from the client.
         int res = read(client_socket, buffer, sizeof(buffer));
@@ -65,7 +63,7 @@ void MySerialServer::open(int port, ClientHandler clientHandler) {
         if (ClientDone) {
             break;
         }
-    }*/
+    }
     close(socketfd);
 }
 

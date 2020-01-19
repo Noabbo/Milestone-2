@@ -1,6 +1,10 @@
-#include <iostream>
+#include "main.h"
 
-int main() {
-    std::cout << "Hello, World!" << std::endl;
+
+using namespace std ;
+
+int main(int argc, char *argv[]) {
+    boot::main().main(stoi(argv[1])) ;
     return 0;
 }
+

@@ -19,7 +19,6 @@ public:
     virtual  ~CacheManager();
     virtual void insert(string key, T obj);
     virtual T get(std::string key);
-    virtual void foreach(const function<void(T&)> func);
 };
 
 

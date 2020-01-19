@@ -6,13 +6,12 @@
 #define MILESTONE_2_SEARCHABLE_H
 
 #include <vector>
-using namespace std;
-template <class T>
-class Searchable {
+#include "State.h"
+template <class T> class Searchable {
 public:
-    T getInitialState();
-    bool isGoalState(T obj);
-    vector<T> getAllPossibleStates(T obj);
+    virtual State<T>* getInitialState() = 0;
+    virtual bool isGoalState(State<T>* obj) = 0;
+    virtual vector<State<T>> getAllPossibleStates(State<T> obj) = 0;
 };
 
 
