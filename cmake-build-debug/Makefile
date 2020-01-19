@@ -123,6 +123,33 @@ Milestone_2/fast:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/build
 .PHONY : Milestone_2/fast
 
+BFSAlgorithm.o: BFSAlgorithm.cpp.o
+
+.PHONY : BFSAlgorithm.o
+
+# target to build an object file
+BFSAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o
+.PHONY : BFSAlgorithm.cpp.o
+
+BFSAlgorithm.i: BFSAlgorithm.cpp.i
+
+.PHONY : BFSAlgorithm.i
+
+# target to preprocess a source file
+BFSAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.i
+.PHONY : BFSAlgorithm.cpp.i
+
+BFSAlgorithm.s: BFSAlgorithm.cpp.s
+
+.PHONY : BFSAlgorithm.s
+
+# target to generate assembly for a file
+BFSAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s
+.PHONY : BFSAlgorithm.cpp.s
+
 ClientHandler.o: ClientHandler.cpp.o
 
 .PHONY : ClientHandler.o
@@ -149,6 +176,87 @@ ClientHandler.s: ClientHandler.cpp.s
 ClientHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/ClientHandler.cpp.s
 .PHONY : ClientHandler.cpp.s
+
+Matrix.o: Matrix.cpp.o
+
+.PHONY : Matrix.o
+
+# target to build an object file
+Matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Matrix.cpp.o
+.PHONY : Matrix.cpp.o
+
+Matrix.i: Matrix.cpp.i
+
+.PHONY : Matrix.i
+
+# target to preprocess a source file
+Matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Matrix.cpp.i
+.PHONY : Matrix.cpp.i
+
+Matrix.s: Matrix.cpp.s
+
+.PHONY : Matrix.s
+
+# target to generate assembly for a file
+Matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Matrix.cpp.s
+.PHONY : Matrix.cpp.s
+
+MatrixSearcher.o: MatrixSearcher.cpp.o
+
+.PHONY : MatrixSearcher.o
+
+# target to build an object file
+MatrixSearcher.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o
+.PHONY : MatrixSearcher.cpp.o
+
+MatrixSearcher.i: MatrixSearcher.cpp.i
+
+.PHONY : MatrixSearcher.i
+
+# target to preprocess a source file
+MatrixSearcher.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.i
+.PHONY : MatrixSearcher.cpp.i
+
+MatrixSearcher.s: MatrixSearcher.cpp.s
+
+.PHONY : MatrixSearcher.s
+
+# target to generate assembly for a file
+MatrixSearcher.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.s
+.PHONY : MatrixSearcher.cpp.s
+
+MatrixSolver.o: MatrixSolver.cpp.o
+
+.PHONY : MatrixSolver.o
+
+# target to build an object file
+MatrixSolver.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o
+.PHONY : MatrixSolver.cpp.o
+
+MatrixSolver.i: MatrixSolver.cpp.i
+
+.PHONY : MatrixSolver.i
+
+# target to preprocess a source file
+MatrixSolver.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.i
+.PHONY : MatrixSolver.cpp.i
+
+MatrixSolver.s: MatrixSolver.cpp.s
+
+.PHONY : MatrixSolver.s
+
+# target to generate assembly for a file
+MatrixSolver.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.s
+.PHONY : MatrixSolver.cpp.s
 
 MyTestClientHandler.o: MyTestClientHandler.cpp.o
 
@@ -258,6 +366,33 @@ Solver.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Solver.cpp.s
 .PHONY : Solver.cpp.s
 
+State.o: State.cpp.o
+
+.PHONY : State.o
+
+# target to build an object file
+State.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/State.cpp.o
+.PHONY : State.cpp.o
+
+State.i: State.cpp.i
+
+.PHONY : State.i
+
+# target to preprocess a source file
+State.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/State.cpp.i
+.PHONY : State.cpp.i
+
+State.s: State.cpp.s
+
+.PHONY : State.s
+
+# target to generate assembly for a file
+State.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/State.cpp.s
+.PHONY : State.cpp.s
+
 StringReverser.o: StringReverser.cpp.o
 
 .PHONY : StringReverser.o
@@ -321,9 +456,21 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Milestone_2"
 	@echo "... edit_cache"
+	@echo "... BFSAlgorithm.o"
+	@echo "... BFSAlgorithm.i"
+	@echo "... BFSAlgorithm.s"
 	@echo "... ClientHandler.o"
 	@echo "... ClientHandler.i"
 	@echo "... ClientHandler.s"
+	@echo "... Matrix.o"
+	@echo "... Matrix.i"
+	@echo "... Matrix.s"
+	@echo "... MatrixSearcher.o"
+	@echo "... MatrixSearcher.i"
+	@echo "... MatrixSearcher.s"
+	@echo "... MatrixSolver.o"
+	@echo "... MatrixSolver.i"
+	@echo "... MatrixSolver.s"
 	@echo "... MyTestClientHandler.o"
 	@echo "... MyTestClientHandler.i"
 	@echo "... MyTestClientHandler.s"
@@ -336,6 +483,9 @@ help:
 	@echo "... Solver.o"
 	@echo "... Solver.i"
 	@echo "... Solver.s"
+	@echo "... State.o"
+	@echo "... State.i"
+	@echo "... State.s"
 	@echo "... StringReverser.o"
 	@echo "... StringReverser.i"
 	@echo "... StringReverser.s"
