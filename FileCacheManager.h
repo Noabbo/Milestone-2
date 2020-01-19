@@ -12,7 +12,9 @@ public:
     //Constructor
     FileCacheManager(int number) {
         this->capacity = number;
-        this->cache =  new unordered_map<string, typename list<pair<string, T>>::iterator>;
+
+        this->cache =  new unordered_map<string, T>;
+
     }
     //Destructor
     ~FileCacheManager() {
@@ -29,15 +31,9 @@ public:
             throw "Error, file doesn't open";
 
         } else {
-            //Create our list of pair
-            list<pair<string, T>> *list_pair = new list<pair<string, T>>;
-            list_pair->push_back(make_pair(key, obj));
-            // The key is already in the cache
-            if (this->cache->find(key) != this->cache->end()) {
-                this->cache->at(key) = list_pair->begin();
-            }
-            //insert element in the cache, depending of the order in our lru
-            this->cache->insert({key, list_pair->begin()});
+            //insert element in the cache
+            this->cache->insert(file_name, obj);
+
             disk_memory.seekg(0);
             disk_memory.write((char*) &obj, sizeof(obj));
             disk_memory.close();
@@ -54,19 +50,13 @@ public:
         if (!disk_memory) {
             throw "an error";
         } else {
-            //find the key in the file and add it to the cache
-            disk_memory.read((char*)&obj, sizeof(obj));
-            list<pair<string, T>> *list_pair = new list<pair<string, T>>;
-            list_pair->push_back(make_pair(key, obj));
-            this->cache->insert({key, list_pair->begin()});
-            disk_memory.close();
+            obj = this->cache->at(key);
+            return obj;
         }
-        obj = this->cache->at(key)->second;
-        return obj;
     }
 
 private:
-    unordered_map<string, typename list<pair<string, T>>::iterator> *cache;
+    unordered_map<string, T> *cache;          
 };
 
 

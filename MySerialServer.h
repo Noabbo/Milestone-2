@@ -14,9 +14,9 @@
 #define MAX_CONNECTED_CLIENTS 10
 
 
-class MySerialServer: public Server {
+class MySerialServer: public server_side::Server {
 public:
-    virtual void open(int port, ClientHandler clientHandler);
+    virtual void open(int port, ClientHandler *clientHandler);
     virtual void stop();
 private:
     mutex mutex_lock;

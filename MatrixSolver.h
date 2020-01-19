@@ -9,14 +9,18 @@
 #include "Solver.h"
 #include "Searcher.h"
 #include "MatrixSearcher.h"
+#include "FileCacheManager.h"
+#include "Matrix.h"
 
 using namespace std;
 
-class MatrixSolver : public Solver<Matrix, string> {
-    MatrixSearcher searcher;
-    Matrix searchable;
+class MatrixSolver : public Solver<vector<string>, string> {
+
+    FileCacheManager<Matrix> *fileCacheManager;
+    MatrixSearcher *searcher;
+    Matrix *searchable;
 public:
-    virtual string solve(Matrix p);
+    virtual string solve(Matrix p) = 0;
 };
 
 
