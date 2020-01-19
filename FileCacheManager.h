@@ -12,7 +12,9 @@ public:
     //Constructor
     FileCacheManager(int number) {
         this->capacity = number;
+
         this->cache =  new unordered_map<string, T>;
+
     }
     //Destructor
     ~FileCacheManager() {
@@ -31,6 +33,7 @@ public:
         } else {
             //insert element in the cache
             this->cache->insert(file_name, obj);
+
             disk_memory.seekg(0);
             disk_memory.write((char*) &obj, sizeof(obj));
             disk_memory.close();
@@ -53,7 +56,7 @@ public:
     }
 
 private:
-    unordered_map<string, T> *cache;
+    unordered_map<string, T> *cache;          
 };
 
 

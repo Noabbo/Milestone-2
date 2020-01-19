@@ -148,6 +148,71 @@ CMakeFiles/Milestone_2.dir/Searchable.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Milestone_2.dir/Searchable.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noa/CLionProjects/AdvancedPro/Milestone-2/Searchable.cpp -o CMakeFiles/Milestone_2.dir/Searchable.cpp.s
 
+CMakeFiles/Milestone_2.dir/State.cpp.o: CMakeFiles/Milestone_2.dir/flags.make
+CMakeFiles/Milestone_2.dir/State.cpp.o: ../State.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/Milestone_2.dir/State.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Milestone_2.dir/State.cpp.o -c /home/noa/CLionProjects/AdvancedPro/Milestone-2/State.cpp
+
+CMakeFiles/Milestone_2.dir/State.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Milestone_2.dir/State.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noa/CLionProjects/AdvancedPro/Milestone-2/State.cpp > CMakeFiles/Milestone_2.dir/State.cpp.i
+
+CMakeFiles/Milestone_2.dir/State.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Milestone_2.dir/State.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noa/CLionProjects/AdvancedPro/Milestone-2/State.cpp -o CMakeFiles/Milestone_2.dir/State.cpp.s
+
+CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o: CMakeFiles/Milestone_2.dir/flags.make
+CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o: ../BFSAlgorithm.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o -c /home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.cpp
+
+CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.cpp > CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.i
+
+CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.cpp -o CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s
+
+CMakeFiles/Milestone_2.dir/Matrix.cpp.o: CMakeFiles/Milestone_2.dir/flags.make
+CMakeFiles/Milestone_2.dir/Matrix.cpp.o: ../Matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/Milestone_2.dir/Matrix.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Milestone_2.dir/Matrix.cpp.o -c /home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.cpp
+
+CMakeFiles/Milestone_2.dir/Matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Milestone_2.dir/Matrix.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.cpp > CMakeFiles/Milestone_2.dir/Matrix.cpp.i
+
+CMakeFiles/Milestone_2.dir/Matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Milestone_2.dir/Matrix.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.cpp -o CMakeFiles/Milestone_2.dir/Matrix.cpp.s
+
+CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o: CMakeFiles/Milestone_2.dir/flags.make
+CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o: ../MatrixSearcher.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o -c /home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.cpp
+
+CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.cpp > CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.i
+
+CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.cpp -o CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.s
+
+CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o: CMakeFiles/Milestone_2.dir/flags.make
+CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o: ../MatrixSolver.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o -c /home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.cpp
+
+CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.cpp > CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.i
+
+CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.cpp -o CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.s
+
 # Object files for target Milestone_2
 Milestone_2_OBJECTS = \
 "CMakeFiles/Milestone_2.dir/main.cpp.o" \
@@ -156,7 +221,12 @@ Milestone_2_OBJECTS = \
 "CMakeFiles/Milestone_2.dir/MyTestClientHandler.cpp.o" \
 "CMakeFiles/Milestone_2.dir/StringReverser.cpp.o" \
 "CMakeFiles/Milestone_2.dir/Searcher.cpp.o" \
-"CMakeFiles/Milestone_2.dir/Searchable.cpp.o"
+"CMakeFiles/Milestone_2.dir/Searchable.cpp.o" \
+"CMakeFiles/Milestone_2.dir/State.cpp.o" \
+"CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o" \
+"CMakeFiles/Milestone_2.dir/Matrix.cpp.o" \
+"CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o" \
+"CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o"
 
 # External object files for target Milestone_2
 Milestone_2_EXTERNAL_OBJECTS =
@@ -168,9 +238,14 @@ Milestone_2: CMakeFiles/Milestone_2.dir/MyTestClientHandler.cpp.o
 Milestone_2: CMakeFiles/Milestone_2.dir/StringReverser.cpp.o
 Milestone_2: CMakeFiles/Milestone_2.dir/Searcher.cpp.o
 Milestone_2: CMakeFiles/Milestone_2.dir/Searchable.cpp.o
+Milestone_2: CMakeFiles/Milestone_2.dir/State.cpp.o
+Milestone_2: CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o
+Milestone_2: CMakeFiles/Milestone_2.dir/Matrix.cpp.o
+Milestone_2: CMakeFiles/Milestone_2.dir/MatrixSearcher.cpp.o
+Milestone_2: CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.o
 Milestone_2: CMakeFiles/Milestone_2.dir/build.make
 Milestone_2: CMakeFiles/Milestone_2.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX executable Milestone_2"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable Milestone_2"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Milestone_2.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -84,10 +84,34 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.h">
+			<Option target="Milestone_2"/>
+		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/ClientHandler.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/ClientHandler.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MyTestClientHandler.cpp">
@@ -112,6 +136,12 @@
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Solver.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/State.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/State.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/StringReverser.cpp">
