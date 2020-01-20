@@ -8,4 +8,3 @@ string MatrixSolver::solve(Matrix p) {
     
     return std::__cxx11::string();
 }
-MatrixSolver::MatrixSolver(FileCacheManager *fileCacheManager) : fileCacheManager(fileCacheManager) {}

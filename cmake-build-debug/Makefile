@@ -150,6 +150,33 @@ BFSAlgorithm.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s
 .PHONY : BFSAlgorithm.cpp.s
 
+CacheManager.o: CacheManager.cpp.o
+
+.PHONY : CacheManager.o
+
+# target to build an object file
+CacheManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/CacheManager.cpp.o
+.PHONY : CacheManager.cpp.o
+
+CacheManager.i: CacheManager.cpp.i
+
+.PHONY : CacheManager.i
+
+# target to preprocess a source file
+CacheManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/CacheManager.cpp.i
+.PHONY : CacheManager.cpp.i
+
+CacheManager.s: CacheManager.cpp.s
+
+.PHONY : CacheManager.s
+
+# target to generate assembly for a file
+CacheManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/CacheManager.cpp.s
+.PHONY : CacheManager.cpp.s
+
 ClientHandler.o: ClientHandler.cpp.o
 
 .PHONY : ClientHandler.o
@@ -176,6 +203,33 @@ ClientHandler.s: ClientHandler.cpp.s
 ClientHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/ClientHandler.cpp.s
 .PHONY : ClientHandler.cpp.s
+
+FileCacheManager.o: FileCacheManager.cpp.o
+
+.PHONY : FileCacheManager.o
+
+# target to build an object file
+FileCacheManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.o
+.PHONY : FileCacheManager.cpp.o
+
+FileCacheManager.i: FileCacheManager.cpp.i
+
+.PHONY : FileCacheManager.i
+
+# target to preprocess a source file
+FileCacheManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.i
+.PHONY : FileCacheManager.cpp.i
+
+FileCacheManager.s: FileCacheManager.cpp.s
+
+.PHONY : FileCacheManager.s
+
+# target to generate assembly for a file
+FileCacheManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.s
+.PHONY : FileCacheManager.cpp.s
 
 Matrix.o: Matrix.cpp.o
 
@@ -339,6 +393,33 @@ Searcher.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searcher.cpp.s
 .PHONY : Searcher.cpp.s
 
+Server.o: Server.cpp.o
+
+.PHONY : Server.o
+
+# target to build an object file
+Server.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Server.cpp.o
+.PHONY : Server.cpp.o
+
+Server.i: Server.cpp.i
+
+.PHONY : Server.i
+
+# target to preprocess a source file
+Server.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Server.cpp.i
+.PHONY : Server.cpp.i
+
+Server.s: Server.cpp.s
+
+.PHONY : Server.s
+
+# target to generate assembly for a file
+Server.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Server.cpp.s
+.PHONY : Server.cpp.s
+
 Solver.o: Solver.cpp.o
 
 .PHONY : Solver.o
@@ -459,9 +540,15 @@ help:
 	@echo "... BFSAlgorithm.o"
 	@echo "... BFSAlgorithm.i"
 	@echo "... BFSAlgorithm.s"
+	@echo "... CacheManager.o"
+	@echo "... CacheManager.i"
+	@echo "... CacheManager.s"
 	@echo "... ClientHandler.o"
 	@echo "... ClientHandler.i"
 	@echo "... ClientHandler.s"
+	@echo "... FileCacheManager.o"
+	@echo "... FileCacheManager.i"
+	@echo "... FileCacheManager.s"
 	@echo "... Matrix.o"
 	@echo "... Matrix.i"
 	@echo "... Matrix.s"
@@ -480,6 +567,9 @@ help:
 	@echo "... Searcher.o"
 	@echo "... Searcher.i"
 	@echo "... Searcher.s"
+	@echo "... Server.o"
+	@echo "... Server.i"
+	@echo "... Server.s"
 	@echo "... Solver.o"
 	@echo "... Solver.i"
 	@echo "... Solver.s"

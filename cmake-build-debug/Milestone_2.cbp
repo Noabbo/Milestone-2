@@ -90,10 +90,22 @@
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CacheManager.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CacheManager.h">
+			<Option target="Milestone_2"/>
+		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/ClientHandler.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/ClientHandler.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/FileCacheManager.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/FileCacheManager.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.cpp">
@@ -114,6 +126,9 @@
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.h">
 			<Option target="Milestone_2"/>
 		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MySerialServer.h">
+			<Option target="Milestone_2"/>
+		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MyTestClientHandler.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
@@ -130,6 +145,12 @@
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searcher.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Server.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Server.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Solver.cpp">
@@ -151,6 +172,9 @@
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/main.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/main.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CMakeLists.txt">

@@ -18,7 +18,7 @@ namespace boot {
     public:
          main(int port) {
             Solver<vector<string>, string> *solver = new MatrixSolver();
-            server_side::Server *server = new MySerialServer;
+            server_side::Server *server = new MySerialServer();
             ClientHandler *client = new MyTestClientHandler();
             server->open(port, client);
             delete(server);

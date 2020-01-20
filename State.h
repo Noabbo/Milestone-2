@@ -12,13 +12,30 @@ T state;
 double cost;
 State<T> cameFrom;
 public:
-    State (T s, State<T> origin) {
+    // constructor
+    State (T s, double c) {
         this->state = s;
-        this->cost = 0;
-        this->cameFrom = origin;
+        this->cost = c;
+        this->cameFrom = NULL;
     }
+    // override of equals
     bool Equals(State<T> s) {
         return state.equals(s.state);
+    }
+    // getters
+    T getState() {
+        return this->state;
+    }
+    double getCost() {
+        return this->cost;
+    }
+    // destructor
+    ~State() {
+        if (this->cameFrom != NULL) {
+            delete(this->cameFrom);
+        }
+        delete(this->state);
+        delete(this);
     }
 };
 

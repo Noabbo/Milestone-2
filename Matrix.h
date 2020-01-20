@@ -15,10 +15,12 @@ class Matrix : public Searchable<string> {
     State<string>* exit;
     int numOfLines;
 public:
-    Matrix(fstream file);
+    Matrix(vector<string> matrix, string start, string end);
     State<string>* getInitialState();
+    unordered_map<string, State<string>*> getMap();
     bool isGoalState(State<string>* obj);
-    vector<State<string>> getAllPossibleStates(State<string> obj);
+    vector<State<string>*> getAllPossibleStates(State<string>* obj);
+    ~Matrix();
 };
 
 

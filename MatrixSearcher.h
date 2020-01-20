@@ -10,16 +10,19 @@
 #include "Matrix.h"
 using namespace std;
 
-class MatrixSearcher : public Searcher<string, string>{
-priority_queue<State<Matrix>> openList;
-int evaluatedNodes;
+class MatrixSearcher : public Searcher<string, vector<string>> {
+    vector<string> marked_cells;
+    priority_queue<State<string>*> openList;
+    int evaluatedNodes;
 protected:
-    State<Matrix> popOpenList();
+    State<string>* popOpenList();
 public:
     MatrixSearcher();
     int OpenListSize();
     int getNumberOfNodesEvaluated();
-    virtual string search(Matrix searchable) = 0;
+    priority_queue<State<string>*> getOpenList();
+    vector<string> getPath();
+    virtual vector<string> search(Matrix searchable) = 0;
 };
 
 

@@ -9,12 +9,11 @@
 #include "Searcher.h"
 #include "Matrix.h"
 #include "MatrixSearcher.h"
-
 using namespace std;
 
 class BFSAlgorithm : public MatrixSearcher {
 public:
-    virtual string search(Matrix searchable);
+    virtual vector<string> search(Matrix searchable);
 };
 
 
