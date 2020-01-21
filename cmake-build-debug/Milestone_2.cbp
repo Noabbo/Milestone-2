@@ -84,10 +84,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/AstarAlgorithm.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/AstarAlgorithm.h">
+			<Option target="Milestone_2"/>
+		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BestFSAlgorithm.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BestFSAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CacheManager.cpp">

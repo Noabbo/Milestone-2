@@ -5,28 +5,36 @@
 #include "BFSAlgorithm.h"
 
 vector<string> BFSAlgorithm::search(Matrix searchable) {
+    queue<State<string>*> openQueue;
     // initialize marked map
     auto cell = searchable.getInitialState();
-    this->getOpenList().push(cell);
-    while (!this->OpenListSize() > 0) {
-        auto x = this->popOpenList();
+    // initial state is also the goal state
+    if (searchable.isGoalState(cell)) {
+        return vector<string>();
+    }
+    openQueue.push(cell);
+    while (openQueue.size() > 0) {
+        this->addNodeEvaluated();
+        auto x = openQueue.front();
+        openQueue.pop();
         // cell is unmarked
         if (this->getNumberOfNodesEvaluated() > this->getPath().size()) {
             this->getPath().push_back(x.getState());
         }
         // end of search
-        if (x->Equals(searchable.isGoalState())) {
-            return this->getPath();
+        if (searchable.isGoalState(x)) {
+            return MatrixSearcher::tracePath(x);
         }
         // add neighbours to list
         vector<State<string>*> adjacents = searchable.getAllPossibleStates(x);
-        auto it = adjacents.begin();
-        while (it != adjacents.end()) {
+        vector<State<string>*>::iterator it;
+        for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             // next one is not a wall
-            if ((*it)->getCost() != -1) {
-                this->getOpenList().push(*it);
+            if (((*it)->getCost() != -1) && !this->isMarked((*it))) {
+                (*it)->setFather(x);
+                openQueue.push(*it);
             }
         }
     }
-    return this->getPath();
+    throw "error - no path found";
 }

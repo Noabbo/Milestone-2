@@ -36,6 +36,10 @@ State<string>* Matrix::getInitialState() {
     return this->entry;
 }
 
+State<string>* Matrix::getGoalState() {
+    return this->exit;
+}
+
 bool Matrix::isGoalState(State<string>* obj) {
     return obj.Equals(this->exit);
 }

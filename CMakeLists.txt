@@ -7,4 +7,4 @@ add_executable(Milestone_2 main.cpp Solver.cpp Solver.h ClientHandler.cpp Client
         MyTestClientHandler.cpp MyTestClientHandler.h StringReverser.cpp StringReverser.h Searcher.cpp Searcher.h
         Searchable.cpp Searchable.h State.cpp State.h BFSAlgorithm.cpp BFSAlgorithm.h Matrix.cpp Matrix.h
         MatrixSearcher.cpp MatrixSearcher.h MatrixSolver.cpp MatrixSolver.h  CacheManager.h CacheManager.cpp
-        FileCacheManager.cpp FileCacheManager.h Server.h Server.cpp MySerialServer.h)
+        FileCacheManager.cpp FileCacheManager.h Server.h Server.cpp MySerialServer.h BestFSAlgorithm.cpp BestFSAlgorithm.h AstarAlgorithm.cpp AstarAlgorithm.h)

@@ -17,6 +17,7 @@ class Matrix : public Searchable<string> {
 public:
     Matrix(vector<string> matrix, string start, string end);
     State<string>* getInitialState();
+    State<string>* getGoalState();
     unordered_map<string, State<string>*> getMap();
     bool isGoalState(State<string>* obj);
     vector<State<string>*> getAllPossibleStates(State<string>* obj);

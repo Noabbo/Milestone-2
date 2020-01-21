@@ -20,9 +20,14 @@ public:
     MatrixSearcher();
     int OpenListSize();
     int getNumberOfNodesEvaluated();
+    void addNodeEvaluated();
     priority_queue<State<string>*> getOpenList();
     vector<string> getPath();
+    bool isMarked(State<string>* s);
+    double getLinePos(State<string>* s);
+    double getColPos(State<string>* s);
     virtual vector<string> search(Matrix searchable) = 0;
+    vector<string> tracePath(State<string>* current);
 };
 
 

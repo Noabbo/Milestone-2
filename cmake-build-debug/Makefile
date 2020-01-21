@@ -123,6 +123,33 @@ Milestone_2/fast:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/build
 .PHONY : Milestone_2/fast
 
+AstarAlgorithm.o: AstarAlgorithm.cpp.o
+
+.PHONY : AstarAlgorithm.o
+
+# target to build an object file
+AstarAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.o
+.PHONY : AstarAlgorithm.cpp.o
+
+AstarAlgorithm.i: AstarAlgorithm.cpp.i
+
+.PHONY : AstarAlgorithm.i
+
+# target to preprocess a source file
+AstarAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.i
+.PHONY : AstarAlgorithm.cpp.i
+
+AstarAlgorithm.s: AstarAlgorithm.cpp.s
+
+.PHONY : AstarAlgorithm.s
+
+# target to generate assembly for a file
+AstarAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.s
+.PHONY : AstarAlgorithm.cpp.s
+
 BFSAlgorithm.o: BFSAlgorithm.cpp.o
 
 .PHONY : BFSAlgorithm.o
@@ -149,6 +176,33 @@ BFSAlgorithm.s: BFSAlgorithm.cpp.s
 BFSAlgorithm.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s
 .PHONY : BFSAlgorithm.cpp.s
+
+BestFSAlgorithm.o: BestFSAlgorithm.cpp.o
+
+.PHONY : BestFSAlgorithm.o
+
+# target to build an object file
+BestFSAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.o
+.PHONY : BestFSAlgorithm.cpp.o
+
+BestFSAlgorithm.i: BestFSAlgorithm.cpp.i
+
+.PHONY : BestFSAlgorithm.i
+
+# target to preprocess a source file
+BestFSAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.i
+.PHONY : BestFSAlgorithm.cpp.i
+
+BestFSAlgorithm.s: BestFSAlgorithm.cpp.s
+
+.PHONY : BestFSAlgorithm.s
+
+# target to generate assembly for a file
+BestFSAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.s
+.PHONY : BestFSAlgorithm.cpp.s
 
 CacheManager.o: CacheManager.cpp.o
 
@@ -537,9 +591,15 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Milestone_2"
 	@echo "... edit_cache"
+	@echo "... AstarAlgorithm.o"
+	@echo "... AstarAlgorithm.i"
+	@echo "... AstarAlgorithm.s"
 	@echo "... BFSAlgorithm.o"
 	@echo "... BFSAlgorithm.i"
 	@echo "... BFSAlgorithm.s"
+	@echo "... BestFSAlgorithm.o"
+	@echo "... BestFSAlgorithm.i"
+	@echo "... BestFSAlgorithm.s"
 	@echo "... CacheManager.o"
 	@echo "... CacheManager.i"
 	@echo "... CacheManager.s"
