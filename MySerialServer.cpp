@@ -82,6 +82,7 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
         cout << "Accepted " << port << endl;
         MyTestClientHandler *client = new MyTestClientHandler();
         client->handleClient(client_socket);
+
         close(socketfd);
         cout << "received client" << endl;
     }

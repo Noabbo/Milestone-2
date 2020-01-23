@@ -43,6 +43,28 @@ public:
         }
         delete(this);
     }
+    // getters
+    T getState() {
+        return this->state;
+    }
+    double getCost() {
+        return this->cost;
+    }
+    T getFather() {
+        return this->cameFrom;
+    }
+    // setter
+    void setFather(State<T>* s) {
+        this->cameFrom = s;
+    }
+    // destructor
+    ~State() {
+        if (this->cameFrom != NULL) {
+            delete(this->cameFrom);
+        }
+        delete(this->state);
+        delete(this);
+    }
 };
 
 #endif //MILESTONE_2_STATE_H

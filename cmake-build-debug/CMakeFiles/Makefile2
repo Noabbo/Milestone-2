@@ -75,6 +75,7 @@ CMakeFiles/Milestone_2.dir/all:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/depend
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/CMakeFiles" --progress-num=1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 "Built target Milestone_2"
+
 .PHONY : CMakeFiles/Milestone_2.dir/all
 
 # Build rule for subdir invocation for target.

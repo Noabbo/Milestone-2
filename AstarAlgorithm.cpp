@@ -43,7 +43,6 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searcha
     }
     throw "error - no path found";
 }
-
 unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Searchable<string>* searchable) {
     unordered_map<string, double> costMap;
     double goalLinePos = this->getLinePos(searchable->getGoalState());
@@ -58,7 +57,6 @@ unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Searchable<strin
     }
     return costMap;
 }
-
 unordered_map<string, double> AstarAlgorithm::initCostMap(Searchable<string>* searchable) {
     unordered_map<string, double> cheapMap;
     unordered_map<string, State<string>*>::iterator it;

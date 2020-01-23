@@ -85,12 +85,14 @@
 			</Target>
 		</Build>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/AstarAlgorithm.cpp">
+
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/AstarAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/BFSAlgorithm.cpp">
+
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/BFSAlgorithm.h">
@@ -139,6 +141,7 @@
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MatrixSolver.cpp">
+
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MatrixSolver.h">
@@ -190,6 +193,7 @@
 			<Option target="Milestone_2"/>
 		</Unit>
 		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/CMakeLists.txt">
+
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

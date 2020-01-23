@@ -18,6 +18,7 @@ public:
     unordered_map<string, State<string>*> getMap() {
         return this->vertex_map;
     }
+
 };
 
 
