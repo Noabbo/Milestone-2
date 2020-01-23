@@ -19,6 +19,7 @@ class MatrixSearcher : public Searcher<string, unordered_map<string, double>> {
 protected:
     State<string>* popOpenList();
 public:
+    virtual unordered_map<string, double> search(Searchable<string>* searchable) = 0;
     int OpenListSize();
     int getNumberOfNodesEvaluated();
     void addNodeEvaluated();
@@ -29,7 +30,7 @@ public:
     double getColPos(State<string>* s);
     vector<string> tracePath(State<string>* current);
     unordered_map<string, double> getCostPath();
-    void buildCostPath(vector<string> path, Matrix searchable);
+    void buildCostPath(vector<string> path, Matrix *searchable);
 };
 
 

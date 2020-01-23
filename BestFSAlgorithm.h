@@ -9,9 +9,9 @@
 #include "MatrixSearcher.h"
 
 class BestFSAlgorithm : public MatrixSearcher {
-    virtual unordered_map<string, double> search(Searchable<string> searchable);
+    virtual unordered_map<string, double> search(Searchable<string>* searchable);
     bool isCurrentInOpenList(priority_queue<State<string>*> list, State<string>* current);
-    unordered_map<string, double> initCostMap(Matrix searchable);
+    unordered_map<string, double> initCostMap(Matrix* searchable);
 };
 
 

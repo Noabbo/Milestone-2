@@ -9,7 +9,7 @@
 #include "Searchable.h"
 template <class T, class Solution> class Searcher {
 public:
-    virtual Solution search(Searchable<T> searchable) = 0;
+    virtual Solution search(Searchable<T>* searchable) = 0;
 };
 
 

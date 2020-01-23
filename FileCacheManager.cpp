@@ -3,10 +3,6 @@
 //
 
 #include "FileCacheManager.h"
-// constructor
-FileCacheManager::FileCacheManager(string name) {
-    this->graphName = name;
-}
 
 void FileCacheManager::createProblemFile(string obj) {
     // open file for new item

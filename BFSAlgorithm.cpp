@@ -4,12 +4,12 @@
 
 #include "BFSAlgorithm.h"
 
-unordered_map<string, double> BFSAlgorithm::search(Searchable<string> searchable) {
+unordered_map<string, double> BFSAlgorithm::search(Searchable<string>* searchable) {
     queue<State<string>*> openQueue;
     // initialize marked map
-    auto cell = searchable.getInitialState();
+    auto cell = searchable->getInitialState();
     // initial state is also the goal state
-    if (searchable.isGoalState(cell)) {
+    if (searchable->isGoalState(cell)) {
         return vector<string>();
     }
     openQueue.push(cell);
@@ -22,12 +22,12 @@ unordered_map<string, double> BFSAlgorithm::search(Searchable<string> searchable
             this->getPath().push_back(x.getState());
         }
         // end of search
-        if (searchable.isGoalState(x)) {
+        if (searchable->isGoalState(x)) {
             MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(x), searchable);
             return this->getCostPath();
         }
         // add neighbours to list
-        vector<State<string>*> adjacents = searchable.getAllPossibleStates(x);
+        vector<State<string>*> adjacents = searchable->getAllPossibleStates(x);
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             // next one is not a wall

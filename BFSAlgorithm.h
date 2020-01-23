@@ -11,7 +11,7 @@ using namespace std;
 
 class BFSAlgorithm : public MatrixSearcher {
 public:
-    virtual unordered_map<string, double> search(Searchable<string> searchable);
+    virtual unordered_map<string, double> search(Searchable<string>* searchable);
 };
 
 

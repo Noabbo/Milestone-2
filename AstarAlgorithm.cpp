@@ -4,11 +4,11 @@
 
 #include "AstarAlgorithm.h"
 
-unordered_map<string, double> AstarAlgorithm::search(Searchable<string> searchable) {
+unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searchable) {
     unordered_map<string, double> currentCost, cheapestCost, heuristicCost;
-    auto cell = searchable.getInitialState();
+    auto cell = searchable->getInitialState();
     // initial state is also the goal state
-    if (searchable.isGoalState(cell)) {
+    if (searchable->isGoalState(cell)) {
         return vector<string>();
     }
     this->getOpenList().push(cell);
@@ -21,13 +21,13 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string> searchab
     while (this->OpenListSize() > 0) {
         auto current = findMinOpenList(this->getOpenList());
         // reached goal
-        if (searchable.isGoalState(current)) {
+        if (searchable->isGoalState(current)) {
             MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(current), searchable);
             return this->getCostPath();
         }
         popFromOpenList(current);
         // find neighbours to current
-        vector<State<string>*> adjacents = searchable.getAllPossibleStates(current);
+        vector<State<string>*> adjacents = searchable->getAllPossibleStates(current);
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             double tmpCheapCost = cheapestCost.at(current.getState()) + (*it)->getCost();
@@ -44,13 +44,13 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string> searchab
     throw "error - no path found";
 }
 
-unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Matrix searchable) {
+unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Matrix *searchable) {
     unordered_map<string, double> costMap;
-    double goalLinePos = this->getLinePos(searchable.getGoalState());
-    double goalColPos = this->getColPos(searchable.getGoalState());
+    double goalLinePos = this->getLinePos(searchable->getGoalState());
+    double goalColPos = this->getColPos(searchable->getGoalState());
     unordered_map<string, State<string>*>::iterator it;
     //move on the map and find approximate cost of path from every vertex to goal
-    for (it = searchable.getMap().begin(); it != searchable.getMap().end(); ++it) {
+    for (it = searchable->getMap().begin(); it != searchable->getMap().end(); ++it) {
         double linePos = this->getLinePos(it->second);
         double colPos = this->getColPos(it->second);
         double h = sqrt(pow((goalLinePos-linePos), 2) + pow((goalColPos-colPos), 2));
@@ -59,10 +59,10 @@ unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Matrix searchabl
     return costMap;
 }
 
-unordered_map<string, double> AstarAlgorithm::initCostMap(Matrix searchable) {
+unordered_map<string, double> AstarAlgorithm::initCostMap(Matrix *searchable) {
     unordered_map<string, double> cheapMap = nullptr;
     unordered_map<string, State<string>*>::iterator it;
-    for (it = searchable.getMap().begin(); it != searchable.getMap().end(); ++it) {
+    for (it = searchable->getMap().begin(); it != searchable->getMap().end(); ++it) {
         cheapMap.emplace(make_pair(it->first, -1));
     }
     return cheapMap;

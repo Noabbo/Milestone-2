@@ -9,10 +9,7 @@
 
 class FileCacheManager : public CacheManager<string, string> {
     hash<string> hasher;
-    string graphName;
 public:
-    //Constructor
-    FileCacheManager(string name);
     virtual bool findSolution(string p);
     virtual void createProblemFile(string obj);
     virtual void insertSolution(string key, string obj);

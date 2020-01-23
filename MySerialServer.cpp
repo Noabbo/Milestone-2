@@ -53,10 +53,9 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
         if (client_socket == -1) {
             throw "Error- didn't accept client";
         }
-        StringReverser *stringReverser = new StringReverser();
+        clientHandler->handleClient(client_socket);
         // The server keep listening to the client.
         cout << "Accepted " << port << endl;
-
 
         close(socketfd);
         cout << "received client" << endl;

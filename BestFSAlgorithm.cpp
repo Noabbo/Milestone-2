@@ -4,11 +4,11 @@
 
 #include "BestFSAlgorithm.h"
 
-unordered_map<string, double> BestFSAlgorithm::search(Searchable<string> searchable) {
+unordered_map<string, double> BestFSAlgorithm::search(Searchable<string>* searchable) {
     unordered_map<string, double> costMap = initCostMap();
-    auto cell = searchable.getInitialState();
+    auto cell = searchable->getInitialState();
     // initial state is also the goal state
-    if (searchable.isGoalState(cell)) {
+    if (searchable->isGoalState(cell)) {
         return vector<string>();
     }
     this->getOpenList().push(cell);
@@ -16,11 +16,11 @@ unordered_map<string, double> BestFSAlgorithm::search(Searchable<string> searcha
         auto current = this->popOpenList();
         this->getPath().push_back(current.getState());
         // end of path
-        if (current->Equals(searchable.isGoalState())) {
+        if (current->Equals(searchable->isGoalState())) {
             MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(current), searchable);
             return this->getCostPath();
         }
-        vector<State<string>*> adjacents = searchable.getAllPossibleStates(current);
+        vector<State<string>*> adjacents = searchable->getAllPossibleStates(current);
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             if ((!isCurrentInOpenList(this->getOpenList(), *it)) && (!this->isMarked(*it))) {
@@ -35,12 +35,12 @@ unordered_map<string, double> BestFSAlgorithm::search(Searchable<string> searcha
     throw "error - no path found";
 }
 
-unordered_map<string, double> BestFSAlgorithm::initCostMap(Matrix searchable) {
+unordered_map<string, double> BestFSAlgorithm::initCostMap(Matrix* searchable) {
     unordered_map<string, double> cheapMap = nullptr;
-    unordered_map<string, State<string>*>::iterator it = searchable.getMap().begin();
+    unordered_map<string, State<string>*>::iterator it = searchable->getMap().begin();
     cheapMap.emplace(make_pair(it->first, it->second->getCost()));
     it++;
-    for (it; it != searchable.getMap().end(); ++it) {
+    for (it; it != searchable->getMap().end(); ++it) {
         cheapMap.emplace(make_pair(it->first, -1));
     }
     return cheapMap;

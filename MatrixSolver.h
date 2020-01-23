@@ -19,11 +19,10 @@ using namespace std;
 
 class MatrixSolver : public Solver<vector<string>, string> {
     MatrixSearcher *searcher;
-    Matrix *searchable;
+    Searchable<string> *searchable;
 public:
     MatrixSolver();
     virtual string solve(vector<string> p);
-    string vectorToString (vector<string> matrix);
     ~MatrixSolver() {
         delete(this->searchable);
         delete(this->searcher);
