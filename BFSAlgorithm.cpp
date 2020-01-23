@@ -4,7 +4,7 @@
 
 #include "BFSAlgorithm.h"
 
-vector<string> BFSAlgorithm::search(Matrix searchable) {
+unordered_map<string, double> BFSAlgorithm::search(Matrix searchable) {
     queue<State<string>*> openQueue;
     // initialize marked map
     auto cell = searchable.getInitialState();
@@ -23,7 +23,8 @@ vector<string> BFSAlgorithm::search(Matrix searchable) {
         }
         // end of search
         if (searchable.isGoalState(x)) {
-            return MatrixSearcher::tracePath(x);
+            MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(x), searchable);
+            return this->getCostPath();
         }
         // add neighbours to list
         vector<State<string>*> adjacents = searchable.getAllPossibleStates(x);

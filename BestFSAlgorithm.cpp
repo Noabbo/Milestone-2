@@ -4,7 +4,7 @@
 
 #include "BestFSAlgorithm.h"
 
-vector<string> BestFSAlgorithm::search(Matrix searchable) {
+unordered_map<string, double> BestFSAlgorithm::search(Matrix searchable) {
     unordered_map<string, double> costMap = initCostMap();
     auto cell = searchable.getInitialState();
     // initial state is also the goal state
@@ -17,7 +17,8 @@ vector<string> BestFSAlgorithm::search(Matrix searchable) {
         this->getPath().push_back(current.getState());
         // end of path
         if (current->Equals(searchable.isGoalState())) {
-            return MatrixSearcher::tracePath(current);
+            MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(current), searchable);
+            return this->getCostPath();
         }
         vector<State<string>*> adjacents = searchable.getAllPossibleStates(current);
         vector<State<string>*>::iterator it;

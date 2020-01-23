@@ -15,10 +15,10 @@
 using namespace std;
 
 class MatrixSolver : public Solver<vector<string>, string> {
-    FileCacheManager fileCacheManager;
     MatrixSearcher *searcher;
     Matrix *searchable;
 public:
+    MatrixSolver(vector<string> matrix);
     virtual string solve(Matrix p);
     string vectorToString (vector<string> matrix);
     ~MatrixSolver() {

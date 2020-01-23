@@ -4,7 +4,7 @@
 
 #include "AstarAlgorithm.h"
 
-vector<string> AstarAlgorithm::search(Matrix searchable) {
+unordered_map<string, double> AstarAlgorithm::search(Matrix searchable) {
     unordered_map<string, double> currentCost, cheapestCost, heuristicCost;
     auto cell = searchable.getInitialState();
     // initial state is also the goal state
@@ -22,7 +22,8 @@ vector<string> AstarAlgorithm::search(Matrix searchable) {
         auto current = findMinOpenList(this->getOpenList());
         // reached goal
         if (searchable.isGoalState(current)) {
-            return MatrixSearcher::tracePath(current);
+            MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(current), searchable);
+            return this->getCostPath();
         }
         popFromOpenList(current);
         // find neighbours to current

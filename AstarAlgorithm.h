@@ -10,7 +10,7 @@
 
 class AstarAlgorithm : public MatrixSearcher{
 public:
-    virtual vector<string> search(Matrix searchable);
+    virtual unordered_map<string, double> search(Matrix searchable);
     unordered_map<string, double> initHeuristicCost(Matrix searchable);
     unordered_map<string, double> initCostMap(Matrix searchable);
     State<string>* findMinOpenList(priority_queue<State<string>*> openList);

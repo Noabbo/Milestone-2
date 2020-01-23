@@ -74,3 +74,24 @@ vector<string> MatrixSearcher::tracePath(State<string>* current) {
     }
     return path;
 }
+
+unordered_map<string, double> MatrixSearcher::getCostPath() {
+    return this->costPath;
+}
+
+void MatrixSearcher::buildCostPath(vector<string> path, Matrix searchable) {
+    vector<string>::iterator it;
+    for (it = path.begin(); it != path.end(); ++it) {
+        string name = *it;
+        State<string>* state = searchable.getMap().at(name);
+        // initialize pair with cell's cost
+        this->getCostPath().emplace(make_pair(name, state->getCost()));
+        auto tmpIt = searchable.getMap().begin();
+        // add costs of previous cells
+        while (tmpIt != it) {
+            this->getCostPath()[name] += tmpIt->second->getCost();
+            tmpIt++;
+        }
+    }
+    return this->getCostPath();
+}

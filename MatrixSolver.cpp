@@ -3,6 +3,14 @@
 //
 
 #include "MatrixSolver.h"
+MatrixSolver::MatrixSolver(vector<string> matrix) {
+    auto it = prev(matrix.end());
+    string end = *it;
+    it = prev(it);
+    string start = *it;
+    matrix.erase(it, matrix.end());
+    this->searchable = new Matrix(matrix, start, end);
+}
 
 string MatrixSolver::solve(Matrix p) {
     
