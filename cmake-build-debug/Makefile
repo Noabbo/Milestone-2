@@ -204,33 +204,6 @@ BestFSAlgorithm.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.s
 .PHONY : BestFSAlgorithm.cpp.s
 
-CacheManager.o: CacheManager.cpp.o
-
-.PHONY : CacheManager.o
-
-# target to build an object file
-CacheManager.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/CacheManager.cpp.o
-.PHONY : CacheManager.cpp.o
-
-CacheManager.i: CacheManager.cpp.i
-
-.PHONY : CacheManager.i
-
-# target to preprocess a source file
-CacheManager.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/CacheManager.cpp.i
-.PHONY : CacheManager.cpp.i
-
-CacheManager.s: CacheManager.cpp.s
-
-.PHONY : CacheManager.s
-
-# target to generate assembly for a file
-CacheManager.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/CacheManager.cpp.s
-.PHONY : CacheManager.cpp.s
-
 ClientHandler.o: ClientHandler.cpp.o
 
 .PHONY : ClientHandler.o
@@ -600,9 +573,6 @@ help:
 	@echo "... BestFSAlgorithm.o"
 	@echo "... BestFSAlgorithm.i"
 	@echo "... BestFSAlgorithm.s"
-	@echo "... CacheManager.o"
-	@echo "... CacheManager.i"
-	@echo "... CacheManager.s"
 	@echo "... ClientHandler.o"
 	@echo "... ClientHandler.i"
 	@echo "... ClientHandler.s"

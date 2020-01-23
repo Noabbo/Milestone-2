@@ -23,7 +23,6 @@ namespace boot {
             server->open(port, client);
             delete(server);
             delete(client);
-
         }
     };
 }

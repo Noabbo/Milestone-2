@@ -6,6 +6,7 @@
 #define MILESTONE_2_MATRIXSEARCHER_H
 
 #include <queue>
+#include <list>
 #include "Searcher.h"
 #include "Matrix.h"
 using namespace std;

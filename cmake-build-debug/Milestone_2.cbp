@@ -102,9 +102,6 @@
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BestFSAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CacheManager.cpp">
-			<Option target="Milestone_2"/>
-		</Unit>
 		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CacheManager.h">
 			<Option target="Milestone_2"/>
 		</Unit>

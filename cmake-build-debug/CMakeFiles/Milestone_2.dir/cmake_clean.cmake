@@ -2,7 +2,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.o"
   "CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.o"
   "CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.o"
-  "CMakeFiles/Milestone_2.dir/CacheManager.cpp.o"
   "CMakeFiles/Milestone_2.dir/ClientHandler.cpp.o"
   "CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.o"
   "CMakeFiles/Milestone_2.dir/Matrix.cpp.o"

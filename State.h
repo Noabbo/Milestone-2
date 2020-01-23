@@ -10,8 +10,7 @@ using namespace std;
 template <class T> class State {
 T state;
 double cost;
-State<T>
-        cameFrom;
+State<T> cameFrom;
 public:
     // constructor
     State (T s, double c) {
