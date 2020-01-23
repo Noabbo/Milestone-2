@@ -30,7 +30,7 @@ public:
     double getColPos(State<string>* s);
     vector<string> tracePath(State<string>* current);
     unordered_map<string, double> getCostPath();
-    void buildCostPath(vector<string> path, Matrix *searchable);
+    void buildCostPath(vector<string> path, Searchable<string> *searchable);
 };
 
 

@@ -15,8 +15,6 @@ string MatrixSolver::solve(vector<string> p) {
     string start = *it;
     p.erase(it, p.end());
     this->searchable = new Matrix(p, start, end);
-    // create file for matrix
     unordered_map<string, double> solutionMap = this->searcher->search(this->searchable);
-    // create file for solution
     return std::__cxx11::string();
 }

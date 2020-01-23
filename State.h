@@ -10,7 +10,7 @@ using namespace std;
 template <class T> class State {
 T state;
 double cost;
-State<T> cameFrom;
+State<T>* cameFrom;
 public:
     // constructor
     State (T s, double c) {
@@ -30,11 +30,11 @@ public:
         return this->cost;
     }
     T getFather() {
-        return this->comeFrom();
+        return this->cameFrom;
     }
     // setter
-    void setFather(State<T> s) {
-        this->comeFrom() = s;
+    void setFather(State<T>* s) {
+        this->cameFrom = s;
     }
     // destructor
     ~State() {

@@ -75,7 +75,7 @@ unordered_map<string, double> MatrixSearcher::getCostPath() {
     return this->costPath;
 }
 
-void MatrixSearcher::buildCostPath(vector<string> path, Matrix *searchable) {
+void MatrixSearcher::buildCostPath(vector<string> path, Searchable<string> *searchable) {
     vector<string>::iterator it;
     for (it = path.begin(); it != path.end(); ++it) {
         string name = *it;
