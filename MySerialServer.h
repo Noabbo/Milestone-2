@@ -5,12 +5,12 @@
 #ifndef MILESTONE_2_MYSERIALSERVER_H
 #define MILESTONE_2_MYSERIALSERVER_H
 
-#include <mutex>
-#include <bits/socket.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <unistd.h>
+#include <strings.h>
 #include "Server.h"
+#include "StringReverser.h"
 #define MAX_CONNECTED_CLIENTS 10
 
 

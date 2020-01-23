@@ -7,8 +7,9 @@
 
 #include <string>
 #include "ClientHandler.h"
+#include "MatrixSolver.h"
 #include "StringReverser.h"
-
+#include <unistd.h>
 using namespace std;
 class MyTestClientHandler : public ClientHandler {
 StringReverser *solver;
