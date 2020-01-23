@@ -1,10 +1,10 @@
 //
-// Created by noa on 18/01/2020.
+// Created by noa on 23/01/2020.
 //
 
-#include "BFSAlgorithm.h"
+#include "DFSAlgorithm.h"
 
-unordered_map<string, double> BFSAlgorithm::search(Searchable<string> searchable) {
+unordered_map<string, double> DFSAlgorithm::search(Searchable<string> searchable) {
     queue<State<string>*> openQueue;
     // initialize marked map
     auto cell = searchable.getInitialState();

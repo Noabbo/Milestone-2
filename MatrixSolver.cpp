@@ -3,17 +3,19 @@
 //
 
 #include "MatrixSolver.h"
-MatrixSolver::MatrixSolver(vector<string> matrix) {
-    auto it = prev(matrix.end());
+MatrixSolver::MatrixSolver() {
+    this->searcher = new AstarAlgorithm();
+}
+
+string MatrixSolver::solve(vector<string> p) {
+    // extract matrix and points from vector
+    auto it = prev(p.end());
     string end = *it;
     it = prev(it);
     string start = *it;
-    matrix.erase(it, matrix.end());
-    this->searchable = new Matrix(matrix, start, end);
-}
+    p.erase(it, p.end());
+    this->searchable = new Matrix(p, start, end);
 
-string MatrixSolver::solve(Matrix p) {
-    
     return std::__cxx11::string();
 }
 

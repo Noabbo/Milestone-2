@@ -4,10 +4,6 @@
 
 #include "MatrixSearcher.h"
 
-MatrixSearcher::MatrixSearcher() {
-    this->evaluatedNodes = 0;
-}
-
 State<string>* MatrixSearcher::popOpenList() {
     this->evaluatedNodes++;
     State<string>* state = this->openList.top();

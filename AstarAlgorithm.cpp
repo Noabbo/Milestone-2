@@ -4,7 +4,7 @@
 
 #include "AstarAlgorithm.h"
 
-unordered_map<string, double> AstarAlgorithm::search(Matrix searchable) {
+unordered_map<string, double> AstarAlgorithm::search(Searchable<string> searchable) {
     unordered_map<string, double> currentCost, cheapestCost, heuristicCost;
     auto cell = searchable.getInitialState();
     // initial state is also the goal state

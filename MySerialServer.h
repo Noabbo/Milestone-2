@@ -18,8 +18,6 @@ class MySerialServer: public server_side::Server {
 public:
     virtual void open(int port, ClientHandler *clientHandler);
     virtual void stop();
-private:
-    mutex mutex_lock;
 };
 
 

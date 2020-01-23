@@ -5,12 +5,12 @@
 #ifndef MILESTONE_2_ASTARALGORITHM_H
 #define MILESTONE_2_ASTARALGORITHM_H
 
-#include <math.h>
+#include <cmath>
 #include "MatrixSearcher.h"
 
-class AstarAlgorithm : public MatrixSearcher{
+class AstarAlgorithm : public MatrixSearcher {
 public:
-    virtual unordered_map<string, double> search(Matrix searchable);
+    unordered_map<string, double> search(Searchable<string> searchable);
     unordered_map<string, double> initHeuristicCost(Matrix searchable);
     unordered_map<string, double> initCostMap(Matrix searchable);
     State<string>* findMinOpenList(priority_queue<State<string>*> openList);

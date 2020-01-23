@@ -2,6 +2,7 @@
   <dictionary name="noa">
     <words>
       <w>adjacents</w>
+      <w>astar</w>
       <w>hasher</w>
     </words>
   </dictionary>

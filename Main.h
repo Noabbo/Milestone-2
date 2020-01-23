@@ -5,6 +5,7 @@
 #include <vector>
 #include <string>
 #include <iostream>
+#include "Server.h"
 #include "MySerialServer.h"
 #include "MyTestClientHandler.h"
 #include "MatrixSolver.h"

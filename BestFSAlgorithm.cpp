@@ -4,7 +4,7 @@
 
 #include "BestFSAlgorithm.h"
 
-unordered_map<string, double> BestFSAlgorithm::search(Matrix searchable) {
+unordered_map<string, double> BestFSAlgorithm::search(Searchable<string> searchable) {
     unordered_map<string, double> costMap = initCostMap();
     auto cell = searchable.getInitialState();
     // initial state is also the goal state

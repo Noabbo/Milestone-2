@@ -9,6 +9,9 @@
 #include "Solver.h"
 #include "Searcher.h"
 #include "MatrixSearcher.h"
+#include "AstarAlgorithm.h"
+#include "BFSAlgorithm.h"
+#include "BestFSAlgorithm.h"
 #include "FileCacheManager.h"
 #include "Matrix.h"
 
@@ -18,7 +21,7 @@ class MatrixSolver : public Solver<vector<string>, string> {
     MatrixSearcher *searcher;
     Matrix *searchable;
 public:
-    MatrixSolver(vector<string> matrix);
+    MatrixSolver();
     virtual string solve(vector<string> p);
     string vectorToString (vector<string> matrix);
     ~MatrixSolver() {
