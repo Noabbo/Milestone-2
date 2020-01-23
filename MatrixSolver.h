@@ -19,7 +19,7 @@ class MatrixSolver : public Solver<vector<string>, string> {
     Matrix *searchable;
 public:
     MatrixSolver(vector<string> matrix);
-    virtual string solve(Matrix p);
+    virtual string solve(vector<string> p);
     string vectorToString (vector<string> matrix);
     ~MatrixSolver() {
         delete(this->searchable);

@@ -12,7 +12,7 @@
 #include <unistd.h>
 using namespace std;
 class MyTestClientHandler : public ClientHandler {
-StringReverser *solver;
+Solver<string, string> *solver;
 public:
     virtual void handleClient(int client_socket);
 };
