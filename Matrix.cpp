@@ -5,29 +5,43 @@
 #include "Matrix.h"
 // constructor
 Matrix::Matrix(vector<string> matrix, string start, string end) {
-    this->entry = new State(start, stod(matrix.front()));
+    this->entry = new State<string>(start, stod(matrix.front()));
     int line = 0;
     int col = 0;
     auto it = matrix.begin();
+    int i = 0;
     while (it != matrix.end()) {
-        // emd of line
-        if (*it == "") {
-            line++;
-            col = 0;
-            it++;
-            break;
+        i++;
+        string l = *it;
+        while (!l.empty()) {
+            string cost;
+            size_t comma = l.find(",");
+            if (comma == string::npos) {
+                cost = l;
+            } else {
+                cost = l.substr(0, comma);
+            }
+            // add point to map
+            string pos = to_string(line);
+            pos += ",";
+            pos += to_string(col);
+
+            State<string> *s = new State<string>(pos, stod(cost));
+            this->getMap().emplace(make_pair(pos, s));
+            if (!end.compare(pos)) {
+                // end point
+                this->exit = s;
+            }
+            col++;
+            if (comma == string::npos) {
+                l.clear();
+            } else {
+                l = l.substr(comma+1);
+            }
         }
-        if (!end.compare(*it)) {
-            // end point
-            this->exit = new State(end, stod(*it));
-        }
-        // add point to map
-        string pos = line;
-        pos += ",";
-        pos += col;
-        State *s = new State(pos, stod(*it));
-        this->vertex_map.emplace(make_pair(pos, s));
-        col++;
+        // end of line
+        line++;
+        col = 0;
         it++;
     }
 }
@@ -41,7 +55,7 @@ State<string>* Matrix::getGoalState() {
 }
 
 bool Matrix::isGoalState(State<string>* obj) {
-    return obj.Equals(this->exit);
+    return this->exit->Equals(*obj);
 }
 // gets all neighbours of vertex in matrix
 vector<State<string>*> Matrix::getAllPossibleStates(State<string>* obj) {
@@ -63,10 +77,10 @@ vector<State<string>*> Matrix::getAllPossibleStates(State<string>* obj) {
     place2 += to_string(stoi(colPos)-1);
     place3 += colPos;
     place4 += colPos;
-    adjacents.push_back(this->vertex_map.find(place1));
-    adjacents.push_back(this->vertex_map.find(place2));
-    adjacents.push_back(this->vertex_map.find(place3));
-    adjacents.push_back(this->vertex_map.find(place4));
+    adjacents.push_back(this->getMap().find(place1)->second);
+    adjacents.push_back(this->getMap().find(place2)->second);
+    adjacents.push_back(this->getMap().find(place3)->second);
+    adjacents.push_back(this->getMap().find(place4)->second);
     return adjacents;
 }
 // destructor
@@ -77,13 +91,9 @@ Matrix::~Matrix() {
     if (this->exit != nullptr) {
         delete(this->exit);
     }
-    while (!this->vertex_map.empty()) {
-        auto s = this->vertex_map.erase(this->vertex_map.begin());
+    while (!this->getMap().empty()) {
+        auto s = this->getMap().erase(this->getMap().begin());
         delete(s->second);
     }
     delete(this);
-}
-
-unordered_map<string, State<string> *> Matrix::getMap() {
-    return this->vertex_map;
 }

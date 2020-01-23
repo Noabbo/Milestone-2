@@ -35,7 +35,7 @@ bool MatrixSearcher::isMarked(State<string> *s) {
     vector<string>::iterator it;
     for (it = marked_cells.begin(); it != marked_cells.end(); ++it) {
         // s is marked
-        if (!(*it).compare(s.getState())) {
+        if (!(*it).compare(s->getState())) {
             return true;
         }
     }
@@ -43,7 +43,7 @@ bool MatrixSearcher::isMarked(State<string> *s) {
 }
 
 double MatrixSearcher::getLinePos(State<string>* s) {
-    auto it = s.getState().find(",");
+    auto it = s->getState().find(",");
     string temp = s->getState();
     return stod(temp.substr(0, it));
 }
@@ -61,7 +61,7 @@ vector<string> MatrixSearcher::tracePath(State<string>* current) {
     // finding path from goal to start
     while (current != NULL) {
         tmpPath.push_front(current->getState());
-        tmp->getState() = tmp->getFather();
+        tmp = tmp->getFather();
     }
     // copy list to vector
     while (!tmpPath.empty()) {
@@ -84,7 +84,7 @@ void MatrixSearcher::buildCostPath(vector<string> path, Searchable<string> *sear
         this->costPath.emplace(make_pair(name, state->getCost()));
         auto tmpIt = searchable->getMap().begin();
         // add costs of previous cells
-        while (tmpIt != it) {
+        while (it->compare(tmpIt->second->getState()) != 0) {
             this->costPath[name] += tmpIt->second->getCost();
             tmpIt++;
         }

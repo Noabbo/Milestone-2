@@ -8,9 +8,9 @@
 #include <string>
 using namespace std;
 template <class T> class State {
-T state;
-double cost;
-State<T>* cameFrom;
+    T state;
+    double cost;
+    State<T>* cameFrom;
 public:
     // constructor
     State (T s, double c) {
@@ -20,7 +20,28 @@ public:
     }
     // override of equals
     bool Equals(State<T> s) {
-        return state.equals(s.state);
+        return state == s.state;
+    }
+    // getters
+    T getState() {
+        return this->state;
+    }
+    double getCost() {
+        return this->cost;
+    }
+    State<T>* getFather() {
+        return this->cameFrom;
+    }
+    // setter
+    void setFather(State<T>* s) {
+        this->cameFrom = s;
+    }
+    // destructor
+    ~State() {
+        if (this->cameFrom != NULL) {
+            delete(this->cameFrom);
+        }
+        delete(this);
     }
     // getters
     T getState() {

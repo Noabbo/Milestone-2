@@ -13,6 +13,7 @@ void FileCacheManager::createProblemFile(string obj) {
     }
     // write matrix to file
     file.write((char*)&obj, sizeof(string));
+    file << "\r\n";
     // close file
     file.close();
 }
@@ -30,6 +31,7 @@ void FileCacheManager::insertSolution(string key, string obj) {
     CacheManager::getHashMap().emplace(make_pair(to_string(hasher(key)), file_name));
     // write solution of matrix to file
     file.write((char*)&obj, sizeof(string));
+    file << "\r\n";
     // close file
     file.close();
 }

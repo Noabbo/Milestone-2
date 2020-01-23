@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.cpp
+Matrix.h
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.h
+
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.h
+unordered_map
+-
+fstream
+-
+Searchable.h
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Searchable.h
+
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Searchable.h
+unordered_map
+-
+vector
+-
+State.h
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/State.h
+
+/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/State.h
+string
+-
+

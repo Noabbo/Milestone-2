@@ -9,15 +9,15 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searcha
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        return vector<string>();
+        return unordered_map<string, double>();
     }
     this->getOpenList().push(cell);
     // initializing maps
     currentCost = initCostMap(searchable);
     cheapestCost = initCostMap(searchable);
     heuristicCost = initHeuristicCost(searchable);
-    currentCost.at(cell.getState()) = heuristicCost.at(cell.getState());
-    cheapestCost.at(cell.getState()) = 0;
+    currentCost.at(cell->getState()) = heuristicCost.at(cell->getState());
+    cheapestCost.at(cell->getState()) = 0;
     while (this->OpenListSize() > 0) {
         auto current = findMinOpenList(this->getOpenList());
         // reached goal
@@ -30,9 +30,9 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searcha
         vector<State<string>*> adjacents = searchable->getAllPossibleStates(current);
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
-            double tmpCheapCost = cheapestCost.at(current.getState()) + (*it)->getCost();
+            double tmpCheapCost = cheapestCost.at(current->getState()) + (*it)->getCost();
             if (tmpCheapCost < cheapestCost.at((*it)->getState())) {
-                (*it)->setFather(*current);
+                (*it)->setFather(current);
                 cheapestCost.at((*it)->getState()) = tmpCheapCost;
                 currentCost.at((*it)->getState()) = cheapestCost.at((*it)->getState()) + heuristicCost.at((*it)->getState());
                 if (!isCurrentInOpenList(this->getOpenList(), *it)) {
@@ -43,8 +43,7 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searcha
     }
     throw "error - no path found";
 }
-
-unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Matrix *searchable) {
+unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Searchable<string>* searchable) {
     unordered_map<string, double> costMap;
     double goalLinePos = this->getLinePos(searchable->getGoalState());
     double goalColPos = this->getColPos(searchable->getGoalState());
@@ -58,9 +57,8 @@ unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Matrix *searchab
     }
     return costMap;
 }
-
-unordered_map<string, double> AstarAlgorithm::initCostMap(Matrix *searchable) {
-    unordered_map<string, double> cheapMap = nullptr;
+unordered_map<string, double> AstarAlgorithm::initCostMap(Searchable<string>* searchable) {
+    unordered_map<string, double> cheapMap;
     unordered_map<string, State<string>*>::iterator it;
     for (it = searchable->getMap().begin(); it != searchable->getMap().end(); ++it) {
         cheapMap.emplace(make_pair(it->first, -1));
@@ -79,7 +77,7 @@ State<string> *AstarAlgorithm::findMinOpenList(priority_queue<State<string>*> op
 
 void AstarAlgorithm::popFromOpenList(State<string>* current) {
     priority_queue<State<string>*> tmp;
-    while (!this->getOpenList().top()->Equals(current)) {
+    while (!this->getOpenList().top()->Equals(*current)) {
         auto item = this->getOpenList().top();
         this->getOpenList().pop();
         tmp.push(item);
@@ -96,7 +94,7 @@ void AstarAlgorithm::popFromOpenList(State<string>* current) {
 bool AstarAlgorithm::isCurrentInOpenList(priority_queue<State<string>*> list, State<string> *current) {
     while (!list.empty()) {
         auto it = list.top();
-        if (it->Equals(current)) {
+        if (it->Equals(*current)) {
             return true;
         }
         list.pop();

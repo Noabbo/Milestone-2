@@ -23,6 +23,7 @@ class MatrixSolver : public Solver<vector<string>, string> {
 public:
     MatrixSolver();
     virtual string solve(vector<string> p);
+    string findDirection(string current);
     ~MatrixSolver() {
         delete(this->searchable);
         delete(this->searcher);

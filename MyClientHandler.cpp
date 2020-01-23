@@ -12,7 +12,9 @@ void MyClientHandler::handleClient(int client_socket) {
         //Wait to listen from the client.
         read(client_socket, buffer, sizeof(buffer));
         string endString = buffer;
-        if (!endString.find("end")) {
+        //Case we are at the end of our matrix
+        if (endString.find("end") != string::npos) {
+            //The solution already exist into our map of solutions
             if (this->fileCacheManager->findSolution(vectorToString(data))) {
                 string name = vectorToString(data);
                 name += "_sol";
@@ -23,6 +25,7 @@ void MyClientHandler::handleClient(int client_socket) {
                 }
                 getline(file, sol);
                 file.close();
+                //The solution need to be calculated
             } else {
                 // create file for matrix
                 vector<string> mat;
@@ -39,6 +42,7 @@ void MyClientHandler::handleClient(int client_socket) {
             }
             break;
         } else {
+            //We are still receiving information about our matrix, and build our vector of string
             data.push_back(endString);
         }
     }

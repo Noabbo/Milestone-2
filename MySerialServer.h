@@ -11,6 +11,7 @@
 #include <strings.h>
 #include "Server.h"
 #include "StringReverser.h"
+#include "MyTestClientHandler.h"
 #define MAX_CONNECTED_CLIENTS 10
 
 

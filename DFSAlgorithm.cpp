@@ -10,7 +10,7 @@ unordered_map<string, double> DFSAlgorithm::search(Searchable<string>* searchabl
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        return vector<string>();
+        return unordered_map<string, double>();
     }
     openStack.push(cell);
     while (openStack.size() > 0) {
@@ -19,7 +19,7 @@ unordered_map<string, double> DFSAlgorithm::search(Searchable<string>* searchabl
         openStack.pop();
         // cell is unmarked
         if (this->getNumberOfNodesEvaluated() > this->getPath().size()) {
-            this->getPath().push_back(x.getState());
+            this->getPath().push_back(x->getState());
         }
         // end of search
         if (searchable->isGoalState(x)) {

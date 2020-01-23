@@ -5,18 +5,18 @@
 #include "BestFSAlgorithm.h"
 
 unordered_map<string, double> BestFSAlgorithm::search(Searchable<string>* searchable) {
-    unordered_map<string, double> costMap = initCostMap();
+    unordered_map<string, double> costMap = initCostMap(searchable);
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        return vector<string>();
+        return unordered_map<string, double>();
     }
     this->getOpenList().push(cell);
     while (this->OpenListSize() > 0) {
         auto current = this->popOpenList();
-        this->getPath().push_back(current.getState());
+        this->getPath().push_back(current->getState());
         // end of path
-        if (current->Equals(searchable->isGoalState())) {
+        if (searchable->isGoalState(current)) {
             MatrixSearcher::buildCostPath(MatrixSearcher::tracePath(current), searchable);
             return this->getCostPath();
         }
@@ -26,7 +26,7 @@ unordered_map<string, double> BestFSAlgorithm::search(Searchable<string>* search
             if ((!isCurrentInOpenList(this->getOpenList(), *it)) && (!this->isMarked(*it))) {
                 (*it)->setFather(current);
                 this->getOpenList().push(*it);
-                this->getPath().push_back(*it);
+                this->getPath().push_back((*it)->getState());
                 this->addNodeEvaluated();
                 costMap.at((*it)->getState()) = (*it)->getCost() + current->getCost();
             }
@@ -35,8 +35,8 @@ unordered_map<string, double> BestFSAlgorithm::search(Searchable<string>* search
     throw "error - no path found";
 }
 
-unordered_map<string, double> BestFSAlgorithm::initCostMap(Matrix* searchable) {
-    unordered_map<string, double> cheapMap = nullptr;
+unordered_map<string, double> BestFSAlgorithm::initCostMap(Searchable<string>* searchable) {
+    unordered_map<string, double> cheapMap;
     unordered_map<string, State<string>*>::iterator it = searchable->getMap().begin();
     cheapMap.emplace(make_pair(it->first, it->second->getCost()));
     it++;
@@ -49,7 +49,7 @@ unordered_map<string, double> BestFSAlgorithm::initCostMap(Matrix* searchable) {
 bool BestFSAlgorithm::isCurrentInOpenList(priority_queue<State<string> *> list, State<string> *current) {
     while (!list.empty()) {
         auto it = list.top();
-        if (it->Equals(current)) {
+        if (it->Equals(*current)) {
             return true;
         }
         list.pop();
