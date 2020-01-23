@@ -18,6 +18,7 @@
 #include <sys/socket.h>
 #include <netinet/in.h>
 #include <sys/time.h> //FD_SET, FD_ISSET, FD_ZERO macros
+#include "MyClientHandler.h"
 #define TRUE   1
 #define MAX_CONNECTED_CLIENTS 10
 
@@ -25,8 +26,6 @@ class MyParallelServer: public server_side::Server {
 public:
     virtual void open(int port, ClientHandler *clientHandler);
     virtual void stop();
-private:
-    mutex mutex_lock;
 };
 
 

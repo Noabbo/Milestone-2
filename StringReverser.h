@@ -12,7 +12,7 @@
 using namespace std;
 
 class StringReverser : public Solver<string, string> {
-    Searcher<string, string> searcher;
+    Searcher<string, string> *searcher;
 public:
     virtual string solve(string p);
 };

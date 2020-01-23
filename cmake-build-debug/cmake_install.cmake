@@ -1,4 +1,4 @@
-# Install script for directory: /home/noa/CLionProjects/AdvancedPro/Milestone-2
+# Install script for directory: /home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

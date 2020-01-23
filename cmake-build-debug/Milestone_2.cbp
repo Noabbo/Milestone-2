@@ -8,28 +8,28 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug"/>
+				<Option working_dir="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug"/>
+				<Option working_dir="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Milestone_2">
-				<Option output="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Milestone_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug"/>
+				<Option output="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Milestone_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -44,15 +44,15 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Milestone_2"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Milestone_2"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="Milestone_2/fast">
-				<Option output="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Milestone_2" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug"/>
+				<Option output="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Milestone_2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
@@ -67,93 +67,129 @@
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 Milestone_2/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 Milestone_2/fast"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="edit_cache">
-				<Option working_dir="/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug"/>
+				<Option working_dir="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -f &quot;/home/fanny/Documents/Advance\ coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/AstarAlgorithm.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/BFSAlgorithm.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/AstarAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/ClientHandler.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/BFSAlgorithm.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/ClientHandler.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/BFSAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/BestFSAlgorithm.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/BestFSAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/CacheManager.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/ClientHandler.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/DFSAlgorithm.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSolver.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/DFSAlgorithm.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MyTestClientHandler.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/FileCacheManager.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/MyTestClientHandler.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/FileCacheManager.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searchable.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Main.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searchable.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Main.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searcher.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searcher.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Solver.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MatrixSearcher.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/Solver.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MatrixSearcher.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/State.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MatrixSolver.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/State.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MatrixSolver.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/StringReverser.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MyClientHandler.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/StringReverser.h">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MyClientHandler.h">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/main.cpp">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MyParallelServer.cpp">
 			<Option target="Milestone_2"/>
 		</Unit>
-		<Unit filename="/home/noa/CLionProjects/AdvancedPro/Milestone-2/CMakeLists.txt">
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MyParallelServer.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MySerialServer.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MySerialServer.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MyTestClientHandler.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/MyTestClientHandler.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Searchable.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Searcher.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Server.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Solver.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/State.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/StringReverser.cpp">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/StringReverser.h">
+			<Option target="Milestone_2"/>
+		</Unit>
+		<Unit filename="/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

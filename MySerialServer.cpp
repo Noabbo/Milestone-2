@@ -1,20 +1,31 @@
 //
 // Created by fanny on 19/01/2020.
 //
+#include <limits>
 #include "MySerialServer.h"
 
-bool ServerExist = true;
 bool timeOut = false;
-bool client_is_connected = true;
+bool firstConnection = true;
 //Create the server
 void MySerialServer::open(int port, ClientHandler *clientHandler) {
-        //Creation of the socket
-        int enable = 1;
+    //Creation of the socket
+    int enable = 1;
+    // sets timeout's definition
+    timeval client_timeout ;
+    client_timeout.tv_sec = 0;
+    client_timeout.tv_usec = 0 ;
+    timeval server_timeout ;
     while (!timeOut) {
 
-        int socketfd = socket(AF_INET, SOCK_STREAM, 0);
+        int socketfd = socket(AF_INET, SOCK_STREAM, 0), newSocketfd;
         if (socketfd == -1) {
             throw "error - could not create a socket";
+        }
+        if(firstConnection) {
+            server_timeout.tv_sec = std::numeric_limits<int>::max() ;
+            firstConnection = false ;
+        }  else {
+            server_timeout.tv_sec = 5;
         }
 
         sockaddr_in serverAddress;
@@ -48,16 +59,29 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
         //Accepting the client
         cout << socketfd << endl;
 
+        server_timeout.tv_usec = 0;
+        setsockopt(socketfd,SOL_SOCKET,SO_RCVTIMEO,(char *)&server_timeout, sizeof(server_timeout));
+       // setsockopt(newSocketfd,SOL_SOCKET,SO_RCVTIMEO,(char *)&client_timeout, sizeof(client_timeout));
+
+        // accept the connection request
+
         cout << "Waiting for acceptation " << port << endl;
         int client_socket = accept(socketfd, (struct sockaddr *) &serverAddress, (socklen_t *) &serverAddress);
         if (client_socket == -1) {
             throw "Error- didn't accept client";
         }
-        StringReverser *stringReverser = new StringReverser();
-        // The server keep listening to the client.
+       // if (newSocketfd < 0)
+        //{
+            if(errno == EWOULDBLOCK)
+            {
+                std::cout<<"timeout!"<<std::endl;
+                timeOut = true;
+            }
+       // }
+        //The client has been accepted by the server, the client handle find the solution send to the server
         cout << "Accepted " << port << endl;
-
-
+        MyTestClientHandler *client = new MyTestClientHandler();
+        client->handleClient(client_socket);
         close(socketfd);
         cout << "received client" << endl;
     }

@@ -69,6 +69,8 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
         {
             //socket descriptor
             sd = client_socket[i];
+            MyClientHandler *client = new MyClientHandler();
+            client->handleClient(sd);
 
             //if valid socket descriptor then add to read list
             if(sd > 0)
@@ -80,8 +82,7 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
         }
 
         //DETERMINE TIMEOUT WANTED
-        //wait for an activity on one of the sockets , timeout is NULL ,
-        //so wait indefinitely
+        //wait for an activity on one of the sockets , timeout is NULL ,so wait indefinitely
         activity = select( max_sd + 1 , &readfds , NULL , NULL , NULL);
 
         if ((activity < 0) && (errno != EINTR))
@@ -89,8 +90,7 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
             cout << "select error" << endl;
         }
 
-        //If something happened on the master socket ,
-        //then its an incoming connection
+        //If something happened on the master socket , then its an incoming connection
         if (FD_ISSET(master_socket, &readfds))
         {
             if ((new_socket = accept(master_socket, (struct sockaddr *)&address, (socklen_t*)&addrlen)) < 0)

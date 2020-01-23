@@ -11,6 +11,7 @@
 #include <strings.h>
 #include "Server.h"
 #include "StringReverser.h"
+#include "MyTestClientHandler.h"
 #define MAX_CONNECTED_CLIENTS 10
 
 
@@ -18,8 +19,6 @@ class MySerialServer: public server_side::Server {
 public:
     virtual void open(int port, ClientHandler *clientHandler);
     virtual void stop();
-private:
-    mutex mutex_lock;
 };
 
 

@@ -5,16 +5,13 @@
 #ifndef MILESTONE_2_BFSALGORITHM_H
 #define MILESTONE_2_BFSALGORITHM_H
 
-#include <string>
-#include "Searcher.h"
-#include "Matrix.h"
+#include <list>
 #include "MatrixSearcher.h"
-
 using namespace std;
 
 class BFSAlgorithm : public MatrixSearcher {
 public:
-    virtual string search(Matrix searchable);
+    virtual unordered_map<string, double> search(Searchable<string>* searchable);
 };
 
 

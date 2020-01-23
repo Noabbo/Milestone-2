@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/noa/Desktop/CLion-2019.2.5/clion-2019.2.5/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /snap/clion/100/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /home/noa/Desktop/CLion-2019.2.5/clion-2019.2.5/bin/cmake/linux/bin/cmake -E remove -f
+RM = /snap/clion/100/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/noa/CLionProjects/AdvancedPro/Milestone-2
+CMAKE_SOURCE_DIR = "/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug
+CMAKE_BINARY_DIR = "/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-d
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/noa/Desktop/CLion-2019.2.5/clion-2019.2.5/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/snap/clion/100/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/noa/Desktop/CLion-2019.2.5/clion-2019.2.5/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/snap/clion/100/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles /home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/CMakeFiles" "/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/CMakeFiles/progress.marks"
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/noa/CLionProjects/AdvancedPro/Milestone-2/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/cmake-build-debug/CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,33 @@ Milestone_2/fast:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/build
 .PHONY : Milestone_2/fast
 
+AstarAlgorithm.o: AstarAlgorithm.cpp.o
+
+.PHONY : AstarAlgorithm.o
+
+# target to build an object file
+AstarAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.o
+.PHONY : AstarAlgorithm.cpp.o
+
+AstarAlgorithm.i: AstarAlgorithm.cpp.i
+
+.PHONY : AstarAlgorithm.i
+
+# target to preprocess a source file
+AstarAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.i
+.PHONY : AstarAlgorithm.cpp.i
+
+AstarAlgorithm.s: AstarAlgorithm.cpp.s
+
+.PHONY : AstarAlgorithm.s
+
+# target to generate assembly for a file
+AstarAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/AstarAlgorithm.cpp.s
+.PHONY : AstarAlgorithm.cpp.s
+
 BFSAlgorithm.o: BFSAlgorithm.cpp.o
 
 .PHONY : BFSAlgorithm.o
@@ -150,32 +177,113 @@ BFSAlgorithm.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BFSAlgorithm.cpp.s
 .PHONY : BFSAlgorithm.cpp.s
 
-ClientHandler.o: ClientHandler.cpp.o
+BestFSAlgorithm.o: BestFSAlgorithm.cpp.o
 
-.PHONY : ClientHandler.o
+.PHONY : BestFSAlgorithm.o
 
 # target to build an object file
-ClientHandler.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/ClientHandler.cpp.o
-.PHONY : ClientHandler.cpp.o
+BestFSAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.o
+.PHONY : BestFSAlgorithm.cpp.o
 
-ClientHandler.i: ClientHandler.cpp.i
+BestFSAlgorithm.i: BestFSAlgorithm.cpp.i
 
-.PHONY : ClientHandler.i
+.PHONY : BestFSAlgorithm.i
 
 # target to preprocess a source file
-ClientHandler.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/ClientHandler.cpp.i
-.PHONY : ClientHandler.cpp.i
+BestFSAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.i
+.PHONY : BestFSAlgorithm.cpp.i
 
-ClientHandler.s: ClientHandler.cpp.s
+BestFSAlgorithm.s: BestFSAlgorithm.cpp.s
 
-.PHONY : ClientHandler.s
+.PHONY : BestFSAlgorithm.s
 
 # target to generate assembly for a file
-ClientHandler.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/ClientHandler.cpp.s
-.PHONY : ClientHandler.cpp.s
+BestFSAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/BestFSAlgorithm.cpp.s
+.PHONY : BestFSAlgorithm.cpp.s
+
+DFSAlgorithm.o: DFSAlgorithm.cpp.o
+
+.PHONY : DFSAlgorithm.o
+
+# target to build an object file
+DFSAlgorithm.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/DFSAlgorithm.cpp.o
+.PHONY : DFSAlgorithm.cpp.o
+
+DFSAlgorithm.i: DFSAlgorithm.cpp.i
+
+.PHONY : DFSAlgorithm.i
+
+# target to preprocess a source file
+DFSAlgorithm.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/DFSAlgorithm.cpp.i
+.PHONY : DFSAlgorithm.cpp.i
+
+DFSAlgorithm.s: DFSAlgorithm.cpp.s
+
+.PHONY : DFSAlgorithm.s
+
+# target to generate assembly for a file
+DFSAlgorithm.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/DFSAlgorithm.cpp.s
+.PHONY : DFSAlgorithm.cpp.s
+
+FileCacheManager.o: FileCacheManager.cpp.o
+
+.PHONY : FileCacheManager.o
+
+# target to build an object file
+FileCacheManager.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.o
+.PHONY : FileCacheManager.cpp.o
+
+FileCacheManager.i: FileCacheManager.cpp.i
+
+.PHONY : FileCacheManager.i
+
+# target to preprocess a source file
+FileCacheManager.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.i
+.PHONY : FileCacheManager.cpp.i
+
+FileCacheManager.s: FileCacheManager.cpp.s
+
+.PHONY : FileCacheManager.s
+
+# target to generate assembly for a file
+FileCacheManager.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/FileCacheManager.cpp.s
+.PHONY : FileCacheManager.cpp.s
+
+Main.o: Main.cpp.o
+
+.PHONY : Main.o
+
+# target to build an object file
+Main.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Main.cpp.o
+.PHONY : Main.cpp.o
+
+Main.i: Main.cpp.i
+
+.PHONY : Main.i
+
+# target to preprocess a source file
+Main.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Main.cpp.i
+.PHONY : Main.cpp.i
+
+Main.s: Main.cpp.s
+
+.PHONY : Main.s
+
+# target to generate assembly for a file
+Main.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Main.cpp.s
+.PHONY : Main.cpp.s
 
 Matrix.o: Matrix.cpp.o
 
@@ -258,6 +366,87 @@ MatrixSolver.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MatrixSolver.cpp.s
 .PHONY : MatrixSolver.cpp.s
 
+MyClientHandler.o: MyClientHandler.cpp.o
+
+.PHONY : MyClientHandler.o
+
+# target to build an object file
+MyClientHandler.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyClientHandler.cpp.o
+.PHONY : MyClientHandler.cpp.o
+
+MyClientHandler.i: MyClientHandler.cpp.i
+
+.PHONY : MyClientHandler.i
+
+# target to preprocess a source file
+MyClientHandler.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyClientHandler.cpp.i
+.PHONY : MyClientHandler.cpp.i
+
+MyClientHandler.s: MyClientHandler.cpp.s
+
+.PHONY : MyClientHandler.s
+
+# target to generate assembly for a file
+MyClientHandler.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyClientHandler.cpp.s
+.PHONY : MyClientHandler.cpp.s
+
+MyParallelServer.o: MyParallelServer.cpp.o
+
+.PHONY : MyParallelServer.o
+
+# target to build an object file
+MyParallelServer.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyParallelServer.cpp.o
+.PHONY : MyParallelServer.cpp.o
+
+MyParallelServer.i: MyParallelServer.cpp.i
+
+.PHONY : MyParallelServer.i
+
+# target to preprocess a source file
+MyParallelServer.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyParallelServer.cpp.i
+.PHONY : MyParallelServer.cpp.i
+
+MyParallelServer.s: MyParallelServer.cpp.s
+
+.PHONY : MyParallelServer.s
+
+# target to generate assembly for a file
+MyParallelServer.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyParallelServer.cpp.s
+.PHONY : MyParallelServer.cpp.s
+
+MySerialServer.o: MySerialServer.cpp.o
+
+.PHONY : MySerialServer.o
+
+# target to build an object file
+MySerialServer.cpp.o:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MySerialServer.cpp.o
+.PHONY : MySerialServer.cpp.o
+
+MySerialServer.i: MySerialServer.cpp.i
+
+.PHONY : MySerialServer.i
+
+# target to preprocess a source file
+MySerialServer.cpp.i:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MySerialServer.cpp.i
+.PHONY : MySerialServer.cpp.i
+
+MySerialServer.s: MySerialServer.cpp.s
+
+.PHONY : MySerialServer.s
+
+# target to generate assembly for a file
+MySerialServer.cpp.s:
+	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MySerialServer.cpp.s
+.PHONY : MySerialServer.cpp.s
+
 MyTestClientHandler.o: MyTestClientHandler.cpp.o
 
 .PHONY : MyTestClientHandler.o
@@ -284,114 +473,6 @@ MyTestClientHandler.s: MyTestClientHandler.cpp.s
 MyTestClientHandler.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/MyTestClientHandler.cpp.s
 .PHONY : MyTestClientHandler.cpp.s
-
-Searchable.o: Searchable.cpp.o
-
-.PHONY : Searchable.o
-
-# target to build an object file
-Searchable.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searchable.cpp.o
-.PHONY : Searchable.cpp.o
-
-Searchable.i: Searchable.cpp.i
-
-.PHONY : Searchable.i
-
-# target to preprocess a source file
-Searchable.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searchable.cpp.i
-.PHONY : Searchable.cpp.i
-
-Searchable.s: Searchable.cpp.s
-
-.PHONY : Searchable.s
-
-# target to generate assembly for a file
-Searchable.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searchable.cpp.s
-.PHONY : Searchable.cpp.s
-
-Searcher.o: Searcher.cpp.o
-
-.PHONY : Searcher.o
-
-# target to build an object file
-Searcher.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searcher.cpp.o
-.PHONY : Searcher.cpp.o
-
-Searcher.i: Searcher.cpp.i
-
-.PHONY : Searcher.i
-
-# target to preprocess a source file
-Searcher.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searcher.cpp.i
-.PHONY : Searcher.cpp.i
-
-Searcher.s: Searcher.cpp.s
-
-.PHONY : Searcher.s
-
-# target to generate assembly for a file
-Searcher.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Searcher.cpp.s
-.PHONY : Searcher.cpp.s
-
-Solver.o: Solver.cpp.o
-
-.PHONY : Solver.o
-
-# target to build an object file
-Solver.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Solver.cpp.o
-.PHONY : Solver.cpp.o
-
-Solver.i: Solver.cpp.i
-
-.PHONY : Solver.i
-
-# target to preprocess a source file
-Solver.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Solver.cpp.i
-.PHONY : Solver.cpp.i
-
-Solver.s: Solver.cpp.s
-
-.PHONY : Solver.s
-
-# target to generate assembly for a file
-Solver.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/Solver.cpp.s
-.PHONY : Solver.cpp.s
-
-State.o: State.cpp.o
-
-.PHONY : State.o
-
-# target to build an object file
-State.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/State.cpp.o
-.PHONY : State.cpp.o
-
-State.i: State.cpp.i
-
-.PHONY : State.i
-
-# target to preprocess a source file
-State.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/State.cpp.i
-.PHONY : State.cpp.i
-
-State.s: State.cpp.s
-
-.PHONY : State.s
-
-# target to generate assembly for a file
-State.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/State.cpp.s
-.PHONY : State.cpp.s
 
 StringReverser.o: StringReverser.cpp.o
 
@@ -420,33 +501,6 @@ StringReverser.cpp.s:
 	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/StringReverser.cpp.s
 .PHONY : StringReverser.cpp.s
 
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/Milestone_2.dir/build.make CMakeFiles/Milestone_2.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -456,12 +510,24 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... Milestone_2"
 	@echo "... edit_cache"
+	@echo "... AstarAlgorithm.o"
+	@echo "... AstarAlgorithm.i"
+	@echo "... AstarAlgorithm.s"
 	@echo "... BFSAlgorithm.o"
 	@echo "... BFSAlgorithm.i"
 	@echo "... BFSAlgorithm.s"
-	@echo "... ClientHandler.o"
-	@echo "... ClientHandler.i"
-	@echo "... ClientHandler.s"
+	@echo "... BestFSAlgorithm.o"
+	@echo "... BestFSAlgorithm.i"
+	@echo "... BestFSAlgorithm.s"
+	@echo "... DFSAlgorithm.o"
+	@echo "... DFSAlgorithm.i"
+	@echo "... DFSAlgorithm.s"
+	@echo "... FileCacheManager.o"
+	@echo "... FileCacheManager.i"
+	@echo "... FileCacheManager.s"
+	@echo "... Main.o"
+	@echo "... Main.i"
+	@echo "... Main.s"
 	@echo "... Matrix.o"
 	@echo "... Matrix.i"
 	@echo "... Matrix.s"
@@ -471,27 +537,21 @@ help:
 	@echo "... MatrixSolver.o"
 	@echo "... MatrixSolver.i"
 	@echo "... MatrixSolver.s"
+	@echo "... MyClientHandler.o"
+	@echo "... MyClientHandler.i"
+	@echo "... MyClientHandler.s"
+	@echo "... MyParallelServer.o"
+	@echo "... MyParallelServer.i"
+	@echo "... MyParallelServer.s"
+	@echo "... MySerialServer.o"
+	@echo "... MySerialServer.i"
+	@echo "... MySerialServer.s"
 	@echo "... MyTestClientHandler.o"
 	@echo "... MyTestClientHandler.i"
 	@echo "... MyTestClientHandler.s"
-	@echo "... Searchable.o"
-	@echo "... Searchable.i"
-	@echo "... Searchable.s"
-	@echo "... Searcher.o"
-	@echo "... Searcher.i"
-	@echo "... Searcher.s"
-	@echo "... Solver.o"
-	@echo "... Solver.i"
-	@echo "... Solver.s"
-	@echo "... State.o"
-	@echo "... State.i"
-	@echo "... State.s"
 	@echo "... StringReverser.o"
 	@echo "... StringReverser.i"
 	@echo "... StringReverser.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 .PHONY : help
 
 

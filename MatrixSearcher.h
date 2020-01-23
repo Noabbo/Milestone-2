@@ -6,20 +6,31 @@
 #define MILESTONE_2_MATRIXSEARCHER_H
 
 #include <queue>
+#include <list>
 #include "Searcher.h"
 #include "Matrix.h"
 using namespace std;
 
-class MatrixSearcher : public Searcher<string, string>{
-priority_queue<State<Matrix>> openList;
-int evaluatedNodes;
+class MatrixSearcher : public Searcher<string, unordered_map<string, double>> {
+    vector<string> marked_cells;
+    priority_queue<State<string>*> openList;
+    unordered_map<string, double> costPath;
+    int evaluatedNodes = 0;
 protected:
-    State<Matrix> popOpenList();
+    State<string>* popOpenList();
 public:
-    MatrixSearcher();
+    virtual unordered_map<string, double> search(Searchable<string>* searchable) = 0;
     int OpenListSize();
     int getNumberOfNodesEvaluated();
-    virtual string search(Matrix searchable) = 0;
+    void addNodeEvaluated();
+    priority_queue<State<string>*> getOpenList();
+    vector<string> getPath();
+    bool isMarked(State<string>* s);
+    double getLinePos(State<string>* s);
+    double getColPos(State<string>* s);
+    vector<string> tracePath(State<string>* current);
+    unordered_map<string, double> getCostPath();
+    void buildCostPath(vector<string> path, Searchable<string> *searchable);
 };
 
 

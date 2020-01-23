@@ -9,18 +9,25 @@
 #include "Solver.h"
 #include "Searcher.h"
 #include "MatrixSearcher.h"
+#include "AstarAlgorithm.h"
+#include "BFSAlgorithm.h"
+#include "BestFSAlgorithm.h"
 #include "FileCacheManager.h"
 #include "Matrix.h"
 
 using namespace std;
 
 class MatrixSolver : public Solver<vector<string>, string> {
-
-    FileCacheManager<Matrix> *fileCacheManager;
     MatrixSearcher *searcher;
-    Matrix *searchable;
+    Searchable<string> *searchable;
 public:
-    virtual string solve(Matrix p) = 0;
+    MatrixSolver();
+    virtual string solve(vector<string> p);
+    string findDirection(string current);
+    ~MatrixSolver() {
+        delete(this->searchable);
+        delete(this->searcher);
+    }
 };
 
 
