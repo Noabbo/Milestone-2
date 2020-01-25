@@ -10,16 +10,18 @@ unordered_map<string, double> DFSAlgorithm::search(Searchable<string>* searchabl
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        return unordered_map<string, double>();
+        unordered_map<string, double> finalMap;
+        finalMap.emplace(make_pair(cell->getState(), cell->getCost()));
+        return finalMap;
     }
     openStack.push(cell);
-    while (openStack.size() > 0) {
-        this->addNodeEvaluated();
+    while (!openStack.empty()) {
         auto x = openStack.top();
         openStack.pop();
         // cell is unmarked
-        if (this->getNumberOfNodesEvaluated() > this->getPath().size()) {
-            this->getPath().push_back(x->getState());
+        if (!this->isMarked(x)) {
+            this->addToMarkedCells(x->getState());
+            this->addNodeEvaluated();
         }
         // end of search
         if (searchable->isGoalState(x)) {
@@ -31,11 +33,23 @@ unordered_map<string, double> DFSAlgorithm::search(Searchable<string>* searchabl
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             // next one is not a wall
-            if (((*it)->getCost() != -1) && !this->isMarked((*it))) {
-                (*it)->setFather(x);
+            if (((*it)->getCost() != -1) && (!isInOpenStack(openStack, *it)) && !this->isMarked((*it))) {
+                (*it)->setFather(*x);
                 openStack.push(*it);
             }
         }
     }
     throw "error - no path found";
+}
+
+bool DFSAlgorithm::isInOpenStack(stack<State<string> *> stack, State<string> *s) {
+    State<string>* it;
+    while (!stack.empty()) {
+        it = stack.top();
+        if (it->Equals(*s)) {
+            return true;
+        }
+        stack.pop();
+    }
+    return false;
 }

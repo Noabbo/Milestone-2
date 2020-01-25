@@ -10,6 +10,7 @@
 
 class DFSAlgorithm : public MatrixSearcher {
     virtual unordered_map<string, double> search(Searchable<string>* searchable);
+    bool isInOpenStack(stack<State<string>*> stack, State<string>* s);
 };
 
 #endif //MILESTONE_2_DFSALGORITHM_H

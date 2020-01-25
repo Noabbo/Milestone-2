@@ -42,6 +42,7 @@ CMakeFiles/Milestone_2.dir/Main.cpp.o: ../BFSAlgorithm.h
 CMakeFiles/Milestone_2.dir/Main.cpp.o: ../BestFSAlgorithm.h
 CMakeFiles/Milestone_2.dir/Main.cpp.o: ../CacheManager.h
 CMakeFiles/Milestone_2.dir/Main.cpp.o: ../ClientHandler.h
+CMakeFiles/Milestone_2.dir/Main.cpp.o: ../DFSAlgorithm.h
 CMakeFiles/Milestone_2.dir/Main.cpp.o: ../FileCacheManager.h
 CMakeFiles/Milestone_2.dir/Main.cpp.o: ../Main.cpp
 CMakeFiles/Milestone_2.dir/Main.cpp.o: ../Main.h

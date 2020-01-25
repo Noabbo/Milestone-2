@@ -18,13 +18,16 @@ class MatrixSearcher : public Searcher<string, unordered_map<string, double>> {
     int evaluatedNodes = 0;
 protected:
     State<string>* popOpenList();
+    void popFromOpenList(State<string>* current);
 public:
     virtual unordered_map<string, double> search(Searchable<string>* searchable) = 0;
     int OpenListSize();
     int getNumberOfNodesEvaluated();
     void addNodeEvaluated();
     priority_queue<State<string>*> getOpenList();
+    void addToOpenList(State<string>* cell);
     vector<string> getPath();
+    void addToMarkedCells(string cell);
     bool isMarked(State<string>* s);
     double getLinePos(State<string>* s);
     double getColPos(State<string>* s);

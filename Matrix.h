@@ -10,12 +10,13 @@
 #include "Searchable.h"
 
 class Matrix : public Searchable<string> {
-
     State<string>* entry;
     State<string>* exit;
     int numOfLines;
+    int numOfCols;
 public:
     Matrix(vector<string> matrix, string start, string end);
+    string removeSpaces(string str);
     State<string>* getInitialState();
     State<string>* getGoalState();
     bool isGoalState(State<string>* obj);

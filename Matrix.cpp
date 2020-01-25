@@ -5,8 +5,7 @@
 #include "Matrix.h"
 // constructor
 Matrix::Matrix(vector<string> matrix, string start, string end) {
-    this->entry = new State<string>(start, stod(matrix.front()));
-    int line = 0;
+    this->numOfLines = 0;
     int col = 0;
     auto it = matrix.begin();
     int i = 0;
@@ -17,17 +16,20 @@ Matrix::Matrix(vector<string> matrix, string start, string end) {
             string cost;
             size_t comma = l.find(",");
             if (comma == string::npos) {
-                cost = l;
+                cost = removeSpaces(l);
             } else {
-                cost = l.substr(0, comma);
+                cost = removeSpaces(l.substr(0, comma));
             }
             // add point to map
-            string pos = to_string(line);
+            string pos = to_string(this->numOfLines);
             pos += ",";
             pos += to_string(col);
-
-            State<string> *s = new State<string>(pos, stod(cost));
-            this->getMap().emplace(make_pair(pos, s));
+            State<string> *s = new State<string>(pos, stod(cost), NULL);
+            this->addToMap(pos, s);
+            if (!start.compare(pos)) {
+                // end point
+                this->entry = s;
+            }
             if (!end.compare(pos)) {
                 // end point
                 this->exit = s;
@@ -39,11 +41,26 @@ Matrix::Matrix(vector<string> matrix, string start, string end) {
                 l = l.substr(comma+1);
             }
         }
+        if (this->numOfLines == 0) {
+            // record number of columns
+            this->numOfCols = col;
+        }
         // end of line
-        line++;
+        this->numOfLines++;
         col = 0;
         it++;
     }
+}
+
+// removes excess spaces and tabs in lines extracted from text file
+string Matrix::removeSpaces(string str) {
+    string newStr;
+    for (char i : str) {
+        if ((i != ' ') && (i != '\t') && (i != '\n') && (i != '\r')) {
+            newStr.push_back(i);
+        }
+    }
+    return newStr;
 }
 
 State<string>* Matrix::getInitialState() {
@@ -59,6 +76,7 @@ bool Matrix::isGoalState(State<string>* obj) {
 }
 // gets all neighbours of vertex in matrix
 vector<State<string>*> Matrix::getAllPossibleStates(State<string>* obj) {
+    unordered_map<string, State<string>*> tmpMap = this->getMap();
     vector<State<string>*> adjacents;
     string pos = obj->getState();
     auto divide = pos.find(",");
@@ -69,18 +87,28 @@ vector<State<string>*> Matrix::getAllPossibleStates(State<string>* obj) {
     string place2 = linePos;
     string place3 = to_string(stoi(linePos)+1);
     string place4 = to_string(stoi(linePos)-1);
-    place1 += ",";
-    place2 += ",";
-    place3 += ",";
-    place4 += ",";
-    place1 += to_string(stoi(colPos)+1);
-    place2 += to_string(stoi(colPos)-1);
-    place3 += colPos;
-    place4 += colPos;
-    adjacents.push_back(this->getMap().find(place1)->second);
-    adjacents.push_back(this->getMap().find(place2)->second);
-    adjacents.push_back(this->getMap().find(place3)->second);
-    adjacents.push_back(this->getMap().find(place4)->second);
+    if ((stoi(place3) >= 0) && (stoi(place3) < this->numOfLines)) {
+        place3 += ",";
+        place3 += colPos;
+        adjacents.push_back(tmpMap.find(place3)->second);
+    }
+    if ((stoi(place4) >= 0) && (stoi(place4) < this->numOfLines)) {
+        place4 += ",";
+        place4 += colPos;
+        adjacents.push_back(tmpMap.find(place4)->second);
+    }
+    int colPlace1 = stoi(colPos)+1;
+    int colPlace2 = stoi(colPos)-1;
+    if ((colPlace1 >= 0) && (colPlace1 < this->numOfCols)) {
+        place1 += ",";
+        place1 += to_string(colPlace1);
+        adjacents.push_back(tmpMap.find(place1)->second);
+    }
+    if ((colPlace2 >= 0) && (colPlace2 < this->numOfCols)) {
+        place2 += ",";
+        place2 += to_string(colPlace2);
+        adjacents.push_back(tmpMap.find(place2)->second);
+    }
     return adjacents;
 }
 // destructor

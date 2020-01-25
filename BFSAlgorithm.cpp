@@ -10,16 +10,18 @@ unordered_map<string, double> BFSAlgorithm::search(Searchable<string>* searchabl
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        return unordered_map<string, double>();
+        unordered_map<string, double> finalMap;
+        finalMap.emplace(make_pair(cell->getState(), cell->getCost()));
+        return finalMap;
     }
     openQueue.push(cell);
-    while (openQueue.size() > 0) {
-        this->addNodeEvaluated();
+    while (!openQueue.empty()) {
         auto x = openQueue.front();
         openQueue.pop();
         // cell is unmarked
-        if (this->getNumberOfNodesEvaluated() > this->getPath().size()) {
-            this->getPath().push_back(x->getState());
+        if (!this->isMarked(x)) {
+            this->addToMarkedCells(x->getState());
+            this->addNodeEvaluated();
         }
         // end of search
         if (searchable->isGoalState(x)) {
@@ -31,11 +33,23 @@ unordered_map<string, double> BFSAlgorithm::search(Searchable<string>* searchabl
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             // next one is not a wall
-            if (((*it)->getCost() != -1) && !this->isMarked((*it))) {
-                (*it)->setFather(x);
+            if (((*it)->getCost() != -1) && (!isInOpenQueue(openQueue, *it)) && !this->isMarked((*it))) {
+                (*it)->setFather(*x);
                 openQueue.push(*it);
             }
         }
     }
     throw "error - no path found";
+}
+
+bool BFSAlgorithm::isInOpenQueue(queue<State<string>*> q, State<string> *s) {
+    State<string>* it;
+    while (!q.empty()) {
+        it = q.front();
+        if (it->Equals(*s)) {
+            return true;
+        }
+        q.pop();
+    }
+    return false;
 }
