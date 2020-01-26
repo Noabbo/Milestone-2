@@ -39,7 +39,6 @@ string MyClientHandler::vectorToString(vector<string> matrix) {
     vector<string>::iterator it;
     for (it = matrix.begin(); it != matrix.end(); ++it) {
         s += (*it);
-        //s += "\n";
     }
     return s;
 }

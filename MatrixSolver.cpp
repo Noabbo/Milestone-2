@@ -3,6 +3,7 @@
 //
 
 #include "MatrixSolver.h"
+
 MatrixSolver::MatrixSolver() {
     this->searcher = new AstarAlgorithm();
 }
@@ -21,7 +22,12 @@ string MatrixSolver::solve(vector<string> p) {
     pos++;
     for (pos; pos != solutionMap.end(); ++pos) {
         string direction = findDirection(pos->first);
-        solution += (direction + " (" + to_string((int)pos->second) + "), ");
+        solution += (direction + " (" + to_string((int)pos->second) + ")");
+        if ((pos+1) != solutionMap.end()) {
+            solution += ", ";
+        } else {
+            solution += "\n";
+        }
     }
     return solution;
 }
