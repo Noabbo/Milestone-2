@@ -4,13 +4,13 @@
 
 #include "BestFSAlgorithm.h"
 
-unordered_map<string, double> BestFSAlgorithm::search(Searchable<string>* searchable) {
+vector<pair<string, double>> BestFSAlgorithm::search(Searchable<string>* searchable) {
     unordered_map<string, double> costMap = initCostMap(searchable);
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        unordered_map<string, double> finalMap;
-        finalMap.emplace(make_pair(cell->getState(), cell->getCost()));
+        vector<pair<string, double>> finalMap;
+        finalMap.push_back(make_pair(cell->getState(), cell->getCost()));
         return finalMap;
     }
     this->addToOpenList(cell);
@@ -25,7 +25,7 @@ unordered_map<string, double> BestFSAlgorithm::search(Searchable<string>* search
         vector<State<string>*> adjacents = searchable->getAllPossibleStates(current);
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
-            if ((!isCurrentInOpenList(this->getOpenList(), *it)) && (!this->isMarked(*it))) {
+            if ((!isCurrentInOpenList(this->getOpenList(), *it)) && (!this->isMarked(*it)) && ((*it)->getCost() != -1)) {
                 (*it)->setFather(*current);
                 this->addToOpenList(*it);
                 this->addToMarkedCells((*it)->getState());

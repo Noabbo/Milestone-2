@@ -22,12 +22,12 @@ namespace boot {
     class Main {
     public:
         void main(int port) {
-           /* server_side::Server *server = new MyParallelServer();
-            ClientHandler *client = new MyClientHandler();
-            server->open(port, client);
-            delete(server);
-            delete(client);*/
-           vector<string> data;
+             server_side::Server *server = new MyParallelServer();
+             ClientHandler *client = new MyClientHandler();
+             server->open(port, client);
+             delete(server);
+             delete(client);
+           /* vector<string> data;
             vector<string> mat;
             string line;
             fstream file;
@@ -46,7 +46,7 @@ namespace boot {
             unordered_map<string, double>::iterator it;
             for (it = sol.begin(); it != sol.end(); ++it) {
                 cout << it->first<< " " << it->second << endl;
-            }
+            }*/
         }
     };
 }

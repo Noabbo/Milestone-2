@@ -16,12 +16,12 @@ string MatrixSolver::solve(vector<string> p) {
     string start = *it;
     p.erase(it, p.end());
     this->searchable = new Matrix(p, start, end);
-    unordered_map<string, double> solutionMap = this->searcher->search(this->searchable);
+    vector<pair<string, double>> solutionMap = this->searcher->search(this->searchable);
     auto pos = solutionMap.begin();
     pos++;
     for (pos; pos != solutionMap.end(); ++pos) {
         string direction = findDirection(pos->first);
-        solution += (direction + " (" + to_string(pos->second) + "), ");
+        solution += (direction + " (" + to_string((int)pos->second) + "), ");
     }
     return solution;
 }

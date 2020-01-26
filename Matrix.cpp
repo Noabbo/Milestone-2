@@ -10,6 +10,7 @@ Matrix::Matrix(vector<string> matrix, string start, string end) {
     auto it = matrix.begin();
     int i = 0;
     while (it != matrix.end()) {
+        i++;
         string l = *it;
         while (!l.empty()) {
             string cost;
@@ -25,11 +26,11 @@ Matrix::Matrix(vector<string> matrix, string start, string end) {
             pos += to_string(col);
             State<string> *s = new State<string>(pos, stod(cost), NULL);
             this->addToMap(pos, s);
-            if (pos == start) {
-                // start point
+            if (!start.compare(pos)) {
+                // end point
                 this->entry = s;
             }
-            if (pos == end) {
+            if (!end.compare(pos)) {
                 // end point
                 this->exit = s;
             }

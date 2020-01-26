@@ -3,6 +3,23 @@
 //
 
 #include "FileCacheManager.h"
+FileCacheManager::FileCacheManager() {
+    fstream file;
+    string str;
+    file.open("AllMatrixSolutions.txt", ios::in | ios::binary);
+    if (!file) {
+        ofstream file { "AllMatrixSolutions.txt" };
+    }
+    while (std::getline(file, str)) {
+        if (str.size() > 0) {
+            size_t pos = str.find(" ");
+            string key = str.substr (0, pos);
+            string s =  str.substr (pos + 1);
+            this->addTohHashMap(key, s);
+        }
+    }
+    file.close();
+}
 
 void FileCacheManager::createProblemFile(string obj) {
     // open file for new item
@@ -20,7 +37,7 @@ void FileCacheManager::createProblemFile(string obj) {
 
 void FileCacheManager::insertSolution(string key, string obj) {
     string file_name = to_string(hasher(key));
-    file_name += "_sol";
+    file_name += "_sol.txt";
     // open file for new item
     fstream file;
     file.open(file_name, ios::out | ios::binary);
@@ -43,7 +60,7 @@ string FileCacheManager::get(string key) {
 bool FileCacheManager::findSolution(string p) {
     unordered_map<string, string> tmpMap = this->getHashMap();
     unordered_map<string, string>::iterator it;
-    for (it = tmpMap.begin(); it != tmpMap.end(); ++it) {
+    for (it = this->getHashMap().begin(); it != this->getHashMap().end(); ++it) {
         if (it->first == to_string(hasher(p))) {
             return true;
         }

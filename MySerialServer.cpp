@@ -1,7 +1,8 @@
+
 //
 // Created by fanny on 19/01/2020.
 //
-#include <limits>
+
 #include "MySerialServer.h"
 
 bool timeOut = false;
@@ -16,6 +17,8 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
     client_timeout.tv_usec = 0 ;
     timeval server_timeout ;
     while (!timeOut) {
+        char buffer[1025];
+        vector<string> data;
 
         int socketfd = socket(AF_INET, SOCK_STREAM, 0), newSocketfd;
         if (socketfd == -1) {
@@ -80,11 +83,24 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
        // }
         //The client has been accepted by the server, the client handle find the solution send to the server
         cout << "Accepted " << port << endl;
-        MyTestClientHandler *client = new MyTestClientHandler();
-        client->handleClient(client_socket);
+        while (true) {
 
-        close(socketfd);
-        cout << "received client" << endl;
+            //Wait to listen from the client.
+            read(client_socket, buffer, sizeof(buffer));
+            string endString = buffer;
+            if (endString.find("end") == 0) {
+                ClientHandler *client = new MyTestClientHandler();
+                string solution = client->handleClient(data);
+                auto rel = write(client_socket, solution.c_str(), solution.size() + 1);
+                if (rel < 0) {
+                    throw "error writing to socket";
+                }
+                close(socketfd);
+                break;
+            } else {
+                data.push_back(endString);
+            }
+        }
     }
 }
 

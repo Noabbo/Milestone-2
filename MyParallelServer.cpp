@@ -69,8 +69,6 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
         {
             //socket descriptor
             sd = client_socket[i];
-            MyClientHandler *client = new MyClientHandler();
-            client->handleClient(sd);
 
             //if valid socket descriptor then add to read list
             if(sd > 0)
@@ -81,7 +79,6 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
                 max_sd = sd;
         }
 
-        //DETERMINE TIMEOUT WANTED
         //wait for an activity on one of the sockets , timeout is NULL ,so wait indefinitely
         activity = select( max_sd + 1 , &readfds , NULL , NULL , NULL);
 
@@ -122,7 +119,7 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
 
             if (FD_ISSET( sd , &readfds))
             {
-                //Check if it was for closing , and also read the incoming message
+               /* //Check if it was for closing , and also read the incoming message
                 if ((valread = read( sd , buffer, 1024)) == 0)
                 {
                     //Buffer contain informations
@@ -135,18 +132,51 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
                     close( sd );
                     client_socket[i] = 0;
                 }
-
-                else
-                {
-                    //set the string terminating NULL byte on the end
-                    //of the data read
-                    buffer[valread] = '\0';
-                    send(sd , buffer , strlen(buffer) , MSG_NOSIGNAL  );
                 }
+                else
+                {*/
+                   vector<string> data;
+                   string solution;
+                   while (true) {
+                       read(sd, buffer, sizeof(buffer));
+                       string endString = buffer;
+                       auto it = endString.find("\n");
+                       string line = endString.substr(0, it);
+
+                       if (line.find("end") != string::npos) {
+                           MyClientHandler *client = new MyClientHandler();
+                           solution = client->handleClient(data);
+                           //Close the socket and mark as 0 in list for reuse
+                           auto rel = write(sd, solution.c_str(), solution.size() + 1);
+                           if (rel < 0) {
+                               throw "Error writing to socket";
+                           }
+                           cout << "finish the while " << sd << endl;
+                           close(sd);
+                           client_socket[i] = 0;
+                           break;
+                       } else {
+                           data.push_back(line);
+                           //set the string terminating NULL byte on the end
+                           //of the data read
+                          /*  buffer[valread] = '\0';
+                            send(sd , buffer , strlen(buffer) , MSG_NOSIGNAL  );*/
+                       }
+                   }
             }
         }
     }
 }
 
 void MyParallelServer::stop() {
+}
+
+string MyParallelServer::vectorToString(vector<string> matrix) {
+    string s = "";
+    vector<string>::iterator it;
+    for (it = matrix.begin(); it != matrix.end(); ++it) {
+        s += (*it);
+        //s += "\n";
+    }
+    return s;
 }

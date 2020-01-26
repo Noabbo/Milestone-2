@@ -96,7 +96,7 @@ vector<string> MatrixSearcher::tracePath(State<string>* current) {
     return path;
 }
 
-unordered_map<string, double> MatrixSearcher::getCostPath() {
+vector<pair<string, double>> MatrixSearcher::getCostPath() {
     return this->costPath;
 }
 
@@ -107,15 +107,33 @@ void MatrixSearcher::buildCostPath(vector<string> path, Searchable<string> *sear
         string name = *it;
         State<string>* state = tmpMap.at(name);
         // initialize pair with cell's cost
-        this->costPath.emplace(make_pair(name, state->getCost()));
         unordered_map<string, State<string>*>::iterator tmpIt;
         State<string> tmpState = *state;
         // add costs of previous cells
-        while (tmpState.getFather() != NULL) {
-            auto tmpFather = tmpState.getFather();
-            tmpIt = searchable->getMap().find(tmpFather->getState());
-            this->costPath[name] += tmpIt->second->getCost();
-            tmpState = *(tmpState.getFather());
-        }
+        int sumCost = findPrevSumCost(path, tmpMap, name);
+        this->costPath.push_back(make_pair(name, sumCost));
     }
 }
+
+vector<pair<string, double>>::iterator MatrixSearcher::findCostInPath(string name, double cost) {
+    std::vector<pair<string, double>>::iterator it;
+    for (it = this->costPath.begin(); it != this->costPath.end(); ++it) {
+        if (it->first == name && it->second == cost) {
+            return it;
+        }
+    }
+    return it;
+}
+
+int MatrixSearcher::findPrevSumCost(vector<string> path, unordered_map<string, State<string> *> tmpMap, string name) {
+    vector<string>::iterator it;
+    int sum = 0;
+    for (it = path.begin(); it != path.end(); ++it) {
+        sum += tmpMap.find(*it)->second->getCost();
+        if (*it == name) {
+            return sum;
+        }
+    }
+    return -1;
+}
+

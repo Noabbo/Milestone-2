@@ -10,12 +10,14 @@
 #include "MatrixSolver.h"
 #include "StringReverser.h"
 #include <unistd.h>
+
 using namespace std;
 class MyTestClientHandler : public ClientHandler {
 Solver<string, string> *solver;
 public:
-    virtual void handleClient(int client_socket);
-};
+    virtual string handleClient(vector<string> problem);
+    string vectorToString(vector<string> matrix);
+    };
 
 
 #endif //MILESTONE_2_MYTESTCLIENTHANDLER_H

@@ -4,14 +4,14 @@
 
 #include "DFSAlgorithm.h"
 
-unordered_map<string, double> DFSAlgorithm::search(Searchable<string>* searchable) {
+vector<pair<string, double>> DFSAlgorithm::search(Searchable<string>* searchable) {
     stack<State<string>*> openStack;
     // initialize marked map
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        unordered_map<string, double> finalMap;
-        finalMap.emplace(make_pair(cell->getState(), cell->getCost()));
+        vector<pair<string, double>> finalMap;
+        finalMap.push_back(make_pair(cell->getState(), cell->getCost()));
         return finalMap;
     }
     openStack.push(cell);

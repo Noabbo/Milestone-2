@@ -16,8 +16,9 @@ class MyClientHandler : public ClientHandler {
     CacheManager<string, string>* fileCacheManager;
     Solver<vector<string>, string> *solver;
 public:
-    virtual void handleClient(int client_socket);
+    virtual string handleClient(vector<string> problem);
     string vectorToString (vector<string> matrix);
+    MyClientHandler();
 };
 
 

@@ -4,14 +4,14 @@
 
 #include "BFSAlgorithm.h"
 
-unordered_map<string, double> BFSAlgorithm::search(Searchable<string>* searchable) {
+vector<pair<string, double>> BFSAlgorithm::search(Searchable<string>* searchable) {
     queue<State<string>*> openQueue;
     // initialize marked map
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        unordered_map<string, double> finalMap;
-        finalMap.emplace(make_pair(cell->getState(), cell->getCost()));
+        vector<pair<string, double>> finalMap;
+        finalMap.push_back(make_pair(cell->getState(), cell->getCost()));
         return finalMap;
     }
     openQueue.push(cell);
