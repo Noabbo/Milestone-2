@@ -4,13 +4,13 @@
 
 #include "AstarAlgorithm.h"
 
-unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searchable) {
+vector<pair<string, double>> AstarAlgorithm::search(Searchable<string>* searchable) {
     unordered_map<string, double> currentCost, cheapestCost, heuristicCost;
     auto cell = searchable->getInitialState();
     // initial state is also the goal state
     if (searchable->isGoalState(cell)) {
-        unordered_map<string, double> finalMap;
-        finalMap.emplace(make_pair(cell->getState(), cell->getCost()));
+        vector<pair<string, double>> finalMap;
+        finalMap.push_back(make_pair(cell->getState(), cell->getCost()));
         return finalMap;
     }
     this->addToOpenList(cell);
@@ -34,11 +34,11 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searcha
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             double tmpCheapCost = cheapestCost.at(current->getState()) + (*it)->getCost();
             if (((tmpCheapCost < cheapestCost.at((*it)->getState()))
-            || (cheapestCost.at((*it)->getState()) == -1)) && ((*it)->getCost() != -1)) {
+                 || (cheapestCost.at((*it)->getState()) == -1)) && ((*it)->getCost() != -1)) {
                 (*it)->setFather(*current);
                 cheapestCost.at((*it)->getState()) = tmpCheapCost;
                 currentCost.at((*it)->getState()) = cheapestCost.at((*it)->getState())
-                        + heuristicCost.at((*it)->getState());
+                                                    + heuristicCost.at((*it)->getState());
                 if (!isCurrentInOpenList(this->getOpenList(), *it)) {
                     this->addToOpenList(*it);
                 }
@@ -73,21 +73,21 @@ unordered_map<string, double> AstarAlgorithm::initCostMap(Searchable<string>* se
 }
 
 State<string> *AstarAlgorithm::findMinOpenList(priority_queue<State<string>*> openList) {
-    State<string>* it = NULL;
-    while (!openList.empty()) {
-        it = openList.top();
-        openList.pop();
-    }
-    return it;
+State<string>* it = NULL;
+while (!openList.empty()) {
+it = openList.top();
+openList.pop();
+}
+return it;
 }
 
 bool AstarAlgorithm::isCurrentInOpenList(priority_queue<State<string>*> list, State<string> *current) {
-    while (!list.empty()) {
-        auto it = list.top();
-        if (it->Equals(*current)) {
-            return true;
-        }
-        list.pop();
-    }
-    return false;
+while (!list.empty()) {
+auto it = list.top();
+if (it->Equals(*current)) {
+return true;
+}
+list.pop();
+}
+return false;
 }
