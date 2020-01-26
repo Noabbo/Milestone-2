@@ -41,8 +41,9 @@ string FileCacheManager::get(string key) {
 }
 
 bool FileCacheManager::findSolution(string p) {
+    unordered_map<string, string> tmpMap = this->getHashMap();
     unordered_map<string, string>::iterator it;
-    for (it = this->getHashMap().begin(); it != this->getHashMap().end(); ++it) {
+    for (it = tmpMap.begin(); it != tmpMap.end(); ++it) {
         if (it->first == to_string(hasher(p))) {
             return true;
         }

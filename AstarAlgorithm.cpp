@@ -33,7 +33,8 @@ unordered_map<string, double> AstarAlgorithm::search(Searchable<string>* searcha
         vector<State<string>*>::iterator it;
         for (it = adjacents.begin(); it != adjacents.end(); ++it) {
             double tmpCheapCost = cheapestCost.at(current->getState()) + (*it)->getCost();
-            if ((tmpCheapCost < cheapestCost.at((*it)->getState())) || (cheapestCost.at((*it)->getState()) == -1)) {
+            if (((tmpCheapCost < cheapestCost.at((*it)->getState()))
+            || (cheapestCost.at((*it)->getState()) == -1)) && ((*it)->getCost() != -1)) {
                 (*it)->setFather(*current);
                 cheapestCost.at((*it)->getState()) = tmpCheapCost;
                 currentCost.at((*it)->getState()) = cheapestCost.at((*it)->getState())
@@ -56,7 +57,7 @@ unordered_map<string, double> AstarAlgorithm::initHeuristicCost(Searchable<strin
     for (it = tmpMap.begin(); it != tmpMap.end(); ++it) {
         double linePos = this->getLinePos(it->second);
         double colPos = this->getColPos(it->second);
-        double h = sqrt(pow((goalLinePos-linePos), 2) + pow((goalColPos-colPos), 2));
+        double h = abs(goalLinePos-linePos) + abs(goalColPos-colPos);
         costMap.emplace(make_pair(it->first, h));
     }
     return costMap;
