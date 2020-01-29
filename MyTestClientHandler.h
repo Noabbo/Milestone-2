@@ -13,10 +13,9 @@
 
 using namespace std;
 class MyTestClientHandler : public ClientHandler {
-Solver<string, string> *solver;
+Solver<vector<string>, string> *solver;
 public:
     virtual void handleClient(int socketClient);
-    string vectorToString(vector<string> matrix);
     };
 
 

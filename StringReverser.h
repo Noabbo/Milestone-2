@@ -13,7 +13,7 @@
 
 using namespace std;
 
-class StringReverser : public Solver<string, string> {
+class StringReverser : public Solver<vector<string>, string> {
 public:
     StringReverser();
     virtual string solve(vector<string> p);
