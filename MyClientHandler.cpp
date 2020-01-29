@@ -43,6 +43,15 @@ void MyClientHandler::handleClient(int socketClient) {
                 solution = this->solver->solve(data);
                 // create file for solution
                 this->fileCacheManager->insertSolution(vectorToString(mat), solution);
+                //Write into a file all the answers of our matrix with the matrix itself
+                fstream fileAllMatrix;
+                fileAllMatrix.open("AllMatrixSolutions.txt", ios::app);
+                if (!fileAllMatrix) {
+                    throw "error into opening file";
+                }
+                fileAllMatrix << vectorToString(mat) << endl;
+                fileAllMatrix << solution << endl;
+                fileAllMatrix.close();
                 auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
                 if (rel < 0) {
                     throw "Error writing to socket";
@@ -52,20 +61,7 @@ void MyClientHandler::handleClient(int socketClient) {
         } else {
             data.push_back(line);
         }
-        getline(file, solution);
-        file.close();
-        //The solution need to be calculated
-    } else {
-        // create file for matrix
-        vector<string> mat;
-        mat.assign(data.begin(), data.end()-2);
-        this->fileCacheManager->createProblemFile(vectorToString(mat));
-        this->solver = new MatrixSolver();
-        solution = this->solver->solve(data);
-        // create file for solution
-        this->fileCacheManager->insertSolution(vectorToString(mat), solution);
     }
-    return solution;
 }
 
 string MyClientHandler::vectorToString(vector<string> matrix) {
@@ -73,6 +69,7 @@ string MyClientHandler::vectorToString(vector<string> matrix) {
     vector<string>::iterator it;
     for (it = matrix.begin(); it != matrix.end(); ++it) {
         s += (*it);
+        //s += "\n";
     }
     return s;
 }

@@ -13,11 +13,9 @@ void MyTestClientHandler::handleClient(int client_socket) {
         //Wait to listen from the client.
         read(client_socket, buffer, sizeof(buffer));
         string endString = buffer;
-        if (endString.find("end") == 0)
-        StringReverser {
+        if (endString.empty()) {
             this->solver = new StringReverser();
-            string problem = vectorToString(data);
-            string solution = this->solver->solve(problem);
+            string solution = this->solver->solve(data);
             auto rel = write(client_socket, solution.c_str(), solution.size() + 1);
             if (rel < 0) {
                 throw "error writing to socket";
@@ -26,12 +24,5 @@ void MyTestClientHandler::handleClient(int client_socket) {
         } else {
             data.push_back(endString);
         }
-
-string MyTestClientHandler::vectorToString(vector<string> matrix) {
-    string s = "";
-    vector<string>::iterator it;
-    for (it = matrix.begin(); it != matrix.end(); ++it) {
-        s += (*it);
     }
-    return s;
 }

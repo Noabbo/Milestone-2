@@ -31,5 +31,10 @@ public:
 };
 
 
+struct client_struct {
+    int clientSocket;
+    vector<string> data;
+};
+
 
 #endif //MILESTONE_2_MYPARALLELSERVER_H
