@@ -18,9 +18,7 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
     timeval server_timeout ;
     while (!timeOut) {
         char buffer[1025];
-        vector<string> data;
-
-        int socketfd = socket(AF_INET, SOCK_STREAM, 0), newSocketfd;
+        int socketfd = socket(AF_INET, SOCK_STREAM, 0);
         if (socketfd == -1) {
             throw "error - could not create a socket";
         }
@@ -73,15 +71,11 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
         if (client_socket == -1) {
             throw "Error- didn't accept client";
         }
-       // if (newSocketfd < 0)
-        //{
             if(errno == EWOULDBLOCK)
             {
                 std::cout<<"timeout!"<<std::endl;
                 timeOut = true;
             }
-       // }
-        //The client has been accepted by the server, the client handle find the solution send to the server
         cout << "Accepted " << port << endl;
         while (true) {
 
@@ -90,15 +84,10 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
             string endString = buffer;
             if (endString.find("end") == 0) {
                 ClientHandler *client = new MyTestClientHandler();
-                string solution = client->handleClient(data);
-                auto rel = write(client_socket, solution.c_str(), solution.size() + 1);
-                if (rel < 0) {
-                    throw "error writing to socket";
-                }
+                client->handleClient(socketfd);
                 close(socketfd);
                 break;
-            } else {
-                data.push_back(endString);
+
             }
         }
     }

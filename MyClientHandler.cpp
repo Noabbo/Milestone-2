@@ -7,16 +7,50 @@ MyClientHandler::MyClientHandler() {
     this->fileCacheManager = new FileCacheManager();
 }
 
-string MyClientHandler::handleClient(vector<string> data) {
+void MyClientHandler::handleClient(int socketClient) {
+    char buffer[1025];
+    vector<string> data;
     string solution;
     string problem = vectorToString(data);
-    if (this->fileCacheManager->findSolution(problem)) {
-        string name = vectorToString(data);
-        name += "_sol.txt";
-        fstream file;
-        file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
-        if (!file) {
-            throw "Error - file didn't open";
+    while (true) {
+        read(socketClient, buffer, sizeof(buffer));
+        string endString = buffer;
+        auto it = endString.find("\n");
+        string line = endString.substr(0, it);
+        if (line.find("end") != string::npos) {
+            if (this->fileCacheManager->findSolution(problem)) {
+                string name = vectorToString(data);
+                name += "_sol.txt";
+                fstream file;
+                file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
+                if (!file) {
+                    throw "Error - file didn't open";
+                }
+                getline(file, solution);
+                auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
+                if (rel < 0) {
+                    throw "Error writing to socket";
+                }
+                file.close();
+                break;
+                //The solution need to be calculated
+            } else {
+                // create file for matrix
+                vector<string> mat;
+                mat.assign(data.begin(), data.end() - 2);
+                this->fileCacheManager->createProblemFile(vectorToString(mat));
+                this->solver = new MatrixSolver();
+                solution = this->solver->solve(data);
+                // create file for solution
+                this->fileCacheManager->insertSolution(vectorToString(mat), solution);
+                auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
+                if (rel < 0) {
+                    throw "Error writing to socket";
+                }
+                break;
+            }
+        } else {
+            data.push_back(line);
         }
         getline(file, solution);
         file.close();

@@ -4,6 +4,10 @@
 using namespace std ;
 
 int main(int argc, char *argv[]) {
-    boot::Main().main(stoi(argv[1])) ;
+    try {
+        boot::Main().main(stoi(argv[1]));
+    } catch (char const* e) {
+        cout << e << endl;
+    }
     return 0;
 }

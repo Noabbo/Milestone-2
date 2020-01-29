@@ -11,7 +11,7 @@
 using namespace std;
 class ClientHandler {
 public:
-    virtual string handleClient(vector<string> problem) = 0;
+    virtual void handleClient(int socketClient) = 0;
 };
 
 

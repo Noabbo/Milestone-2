@@ -11,12 +11,14 @@
 #include "MatrixSolver.h"
 #include "StringReverser.h"
 #include <unistd.h>
+#include <mutex>
+
 using namespace std;
 class MyClientHandler : public ClientHandler {
     CacheManager<string, string>* fileCacheManager;
     Solver<vector<string>, string> *solver;
 public:
-    virtual string handleClient(vector<string> problem);
+    virtual void handleClient(int socketClient);
     string vectorToString (vector<string> matrix);
     MyClientHandler();
 };
