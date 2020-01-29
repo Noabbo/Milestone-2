@@ -20,6 +20,7 @@ class MyClientHandler : public ClientHandler {
 public:
     virtual void handleClient(int socketClient);
     string vectorToString (vector<string> matrix);
+    string removeSpaces(string str);
     MyClientHandler();
 };
 

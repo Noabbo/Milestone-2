@@ -11,16 +11,17 @@ void MyClientHandler::handleClient(int socketClient) {
     char buffer[1025];
     vector<string> data;
     string solution;
-    string problem = vectorToString(data);
     while (true) {
         read(socketClient, buffer, sizeof(buffer));
         string endString = buffer;
-        auto it = endString.find("\n");
-        string line = endString.substr(0, it);
+        string line = removeSpaces(endString);
         if (line.find("end") != string::npos) {
+            vector<string> mat;
+            mat.assign(data.begin(), data.end() - 2);
+            string problem = vectorToString(mat);
+            problem += ".txt";
             if (this->fileCacheManager->findSolution(problem)) {
-                string name = vectorToString(data);
-                name += "_sol.txt";
+                string name = vectorToString(mat);
                 fstream file;
                 file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
                 if (!file) {
@@ -36,8 +37,6 @@ void MyClientHandler::handleClient(int socketClient) {
                 //The solution need to be calculated
             } else {
                 // create file for matrix
-                vector<string> mat;
-                mat.assign(data.begin(), data.end() - 2);
                 this->fileCacheManager->createProblemFile(vectorToString(mat));
                 this->solver = new MatrixSolver();
                 solution = this->solver->solve(data);
@@ -52,20 +51,7 @@ void MyClientHandler::handleClient(int socketClient) {
         } else {
             data.push_back(line);
         }
-        getline(file, solution);
-        file.close();
-        //The solution need to be calculated
-    } else {
-        // create file for matrix
-        vector<string> mat;
-        mat.assign(data.begin(), data.end()-2);
-        this->fileCacheManager->createProblemFile(vectorToString(mat));
-        this->solver = new MatrixSolver();
-        solution = this->solver->solve(data);
-        // create file for solution
-        this->fileCacheManager->insertSolution(vectorToString(mat), solution);
     }
-    return solution;
 }
 
 string MyClientHandler::vectorToString(vector<string> matrix) {
@@ -75,4 +61,15 @@ string MyClientHandler::vectorToString(vector<string> matrix) {
         s += (*it);
     }
     return s;
+}
+
+// removes excess spaces and tabs in lines extracted from text file
+string MyClientHandler::removeSpaces(string str) {
+    string newStr;
+    for (char i : str) {
+        if ((i != ' ') && (i != '\t') && (i != '\n') && (i != '\r')) {
+            newStr.push_back(i);
+        }
+    }
+    return newStr;
 }

@@ -24,7 +24,9 @@ FileCacheManager::FileCacheManager() {
 void FileCacheManager::createProblemFile(string obj) {
     // open file for new item
     fstream file;
-    file.open(to_string(hasher(obj)), ios::out | ios::binary);
+    string name = to_string(hasher(obj));
+    name += ".txt";
+    file.open(name, ios::out | ios::binary);
     if (!file) {
         throw ("error - file didn't open");
     }
