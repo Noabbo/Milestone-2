@@ -42,6 +42,15 @@ void MyClientHandler::handleClient(int socketClient) {
                 solution = this->solver->solve(data);
                 // create file for solution
                 this->fileCacheManager->insertSolution(vectorToString(mat), solution);
+                 //Write into a file all the answers of our matrix with the matrix itself
+                fstream fileAllMatrix;
+                fileAllMatrix.open("AllMatrixSolutions.txt", ios::app);
+                if (!fileAllMatrix) {
+                    throw "error into opening file";
+                }
+                fileAllMatrix << vectorToString(mat) << endl;
+                fileAllMatrix << solution << endl;
+                fileAllMatrix.close();
                 auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
                 if (rel < 0) {
                     throw "Error writing to socket";
