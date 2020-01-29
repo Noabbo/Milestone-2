@@ -1,3 +1,4 @@
+
 //
 // Created by noa on 17/01/2020.
 //
@@ -26,6 +27,11 @@ void MyTestClientHandler::handleClient(int client_socket) {
             data.push_back(endString);
         }
 
+string MyTestClientHandler::vectorToString(vector<string> matrix) {
+    string s = "";
+    vector<string>::iterator it;
+    for (it = matrix.begin(); it != matrix.end(); ++it) {
+        s += (*it);
     }
-
+    return s;
 }

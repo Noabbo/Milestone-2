@@ -6,27 +6,47 @@
 
 #IncludeRegexTransform: 
 
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.cpp
-Matrix.h
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/AstarAlgorithm.cpp
+AstarAlgorithm.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/AstarAlgorithm.h
 
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Matrix.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/AstarAlgorithm.h
+cmath
+-
+MatrixSearcher.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.h
+
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.h
 unordered_map
 -
 fstream
 -
 Searchable.h
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Searchable.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searchable.h
 
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/Searchable.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/MatrixSearcher.h
+queue
+-
+list
+-
+Searcher.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searcher.h
+Matrix.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Matrix.h
+
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searchable.h
 unordered_map
 -
 vector
 -
 State.h
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/State.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/State.h
 
-/home/fanny/Documents/Advance coding/Milestone-2-23.1.20.new/Milestone-2-master/State.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searcher.h
+Searchable.h
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/Searchable.h
+
+/home/noa/CLionProjects/AdvancedPro/Milestone-2/State.h
 string
 -
 

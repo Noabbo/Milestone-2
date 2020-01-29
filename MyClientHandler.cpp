@@ -52,7 +52,20 @@ void MyClientHandler::handleClient(int socketClient) {
         } else {
             data.push_back(line);
         }
+        getline(file, solution);
+        file.close();
+        //The solution need to be calculated
+    } else {
+        // create file for matrix
+        vector<string> mat;
+        mat.assign(data.begin(), data.end()-2);
+        this->fileCacheManager->createProblemFile(vectorToString(mat));
+        this->solver = new MatrixSolver();
+        solution = this->solver->solve(data);
+        // create file for solution
+        this->fileCacheManager->insertSolution(vectorToString(mat), solution);
     }
+    return solution;
 }
 
 string MyClientHandler::vectorToString(vector<string> matrix) {
@@ -60,7 +73,6 @@ string MyClientHandler::vectorToString(vector<string> matrix) {
     vector<string>::iterator it;
     for (it = matrix.begin(); it != matrix.end(); ++it) {
         s += (*it);
-        //s += "\n";
     }
     return s;
 }
