@@ -21,9 +21,8 @@ void MyClientHandler::handleClient(int socketClient) {
             string problem = vectorToString(mat);
             problem += ".txt";
             if (this->fileCacheManager->findSolution(problem)) {
-                string name = vectorToString(mat);
                 fstream file;
-                file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
+                file.open(this->fileCacheManager->get(problem), ios::in | ios::binary);
                 if (!file) {
                     throw "Error - file didn't open";
                 }
