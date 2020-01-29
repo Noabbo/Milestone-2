@@ -9,9 +9,11 @@
 #include <netinet/in.h>
 #include <unistd.h>
 #include <strings.h>
+#include <limits>
 #include "Server.h"
 #include "StringReverser.h"
 #include "MyTestClientHandler.h"
+
 #define MAX_CONNECTED_CLIENTS 10
 
 

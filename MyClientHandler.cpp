@@ -3,47 +3,54 @@
 //
 
 #include "MyClientHandler.h"
+MyClientHandler::MyClientHandler() {
+    this->fileCacheManager = new FileCacheManager();
+}
 
-void MyClientHandler::handleClient(int client_socket) {
-    char buffer[1024];
+void MyClientHandler::handleClient(int socketClient) {
+    char buffer[1025];
     vector<string> data;
-    string sol;
+    string solution;
+    string problem = vectorToString(data);
     while (true) {
-        //Wait to listen from the client.
-        read(client_socket, buffer, sizeof(buffer));
+        read(socketClient, buffer, sizeof(buffer));
         string endString = buffer;
-        //Case we are at the end of our matrix
-        if (endString.find("end") != string::npos) {
-            //The solution already exist into our map of solutions
-            if (this->fileCacheManager->findSolution(vectorToString(data))) {
+        auto it = endString.find("\n");
+        string line = endString.substr(0, it);
+        if (line.find("end") != string::npos) {
+            if (this->fileCacheManager->findSolution(problem)) {
                 string name = vectorToString(data);
-                name += "_sol";
+                name += "_sol.txt";
                 fstream file;
                 file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
                 if (!file) {
                     throw "Error - file didn't open";
                 }
-                getline(file, sol);
+                getline(file, solution);
+                auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
+                if (rel < 0) {
+                    throw "Error writing to socket";
+                }
                 file.close();
+                break;
                 //The solution need to be calculated
             } else {
                 // create file for matrix
                 vector<string> mat;
-                mat.assign(data.begin(), data.end()-2);
+                mat.assign(data.begin(), data.end() - 2);
                 this->fileCacheManager->createProblemFile(vectorToString(mat));
                 this->solver = new MatrixSolver();
-                sol = this->solver->solve(data);
+                solution = this->solver->solve(data);
                 // create file for solution
-                this->fileCacheManager->insertSolution(vectorToString(mat), sol);
+                this->fileCacheManager->insertSolution(vectorToString(mat), solution);
+                auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
+                if (rel < 0) {
+                    throw "Error writing to socket";
+                }
+                break;
             }
-            auto rel = write(client_socket, sol.c_str(), sol.size() + 1);
-            if (rel < 0) {
-                throw "Error writing to socket";
-            }
-            break;
         } else {
-            //We are still receiving information about our matrix, and build our vector of string
-            data.push_back(endString);
+            data.push_back(line);
         }
     }
 }

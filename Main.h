@@ -11,6 +11,7 @@
 #include "MatrixSolver.h"
 #include "MyParallelServer.h"
 #include "MyClientHandler.h"
+#include "DFSAlgorithm.h"
 
 
 #ifndef MILESTONE_2_MAIN_H
@@ -21,12 +22,12 @@ namespace boot {
     class Main {
     public:
         void main(int port) {
-           /* server_side::Server *server = new MyParallelServer();
-            ClientHandler *client = new MyClientHandler();
-            server->open(port, client);
-            delete(server);
-            delete(client);*/
-           vector<string> data;
+             server_side::Server *server = new MyParallelServer();
+             ClientHandler *client = new MyClientHandler();
+             server->open(port, client);
+             delete(server);
+             delete(client);
+           /* vector<string> data;
             vector<string> mat;
             string line;
             fstream file;
@@ -39,13 +40,13 @@ namespace boot {
             }
             mat.assign(data.begin(), data.end()-2);
             Searchable<string>* matrix = new Matrix(mat, *prev(prev(data.end())), *prev(data.end()));
-            MatrixSearcher* algo = new BFSAlgorithm();
+            MatrixSearcher* algo = new AstarAlgorithm();
             unordered_map<string, double> sol = algo->search(matrix);
             FileCacheManager *fileCacheManager = new FileCacheManager();
             unordered_map<string, double>::iterator it;
             for (it = sol.begin(); it != sol.end(); ++it) {
-                cout << it->first<< ", " << it->second << endl;
-            }
+                cout << it->first<< " " << it->second << endl;
+            }*/
         }
     };
 }

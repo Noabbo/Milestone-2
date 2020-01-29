@@ -18,7 +18,13 @@ public:
     unordered_map<string, State<string>*> getMap() {
         return this->vertex_map;
     }
-
+    void addToMap(T key, State<T>* value) {
+        this->vertex_map.emplace(make_pair(key, value));
+    }
+    /*State<T>* findInMap(T key) {
+        auto it = this->vertex_map.find(key);
+        return it->second;
+    }*/
 };
 
 

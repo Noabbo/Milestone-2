@@ -7,10 +7,11 @@
 
 #include <iostream>
 #include <fstream>
+#include <vector>
 using namespace std;
 class ClientHandler {
 public:
-    virtual void handleClient(int client_socket) = 0;
+    virtual void handleClient(int socketClient) = 0;
 };
 
 

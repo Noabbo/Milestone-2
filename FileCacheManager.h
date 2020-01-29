@@ -10,6 +10,7 @@
 class FileCacheManager : public CacheManager<string, string> {
     hash<string> hasher;
 public:
+    FileCacheManager();
     virtual bool findSolution(string p);
     virtual void createProblemFile(string obj);
     virtual void insertSolution(string key, string obj);

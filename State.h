@@ -13,14 +13,14 @@ template <class T> class State {
     State<T>* cameFrom;
 public:
     // constructor
-    State (T s, double c) {
+    State (T s, double c, State<T>* cf) {
         this->state = s;
         this->cost = c;
-        this->cameFrom = NULL;
+        this->cameFrom = cf;
     }
     // override of equals
     bool Equals(State<T> s) {
-        return state == s.state;
+        return this->state == s.state;
     }
     // getters
     T getState() {
@@ -33,38 +33,16 @@ public:
         return this->cameFrom;
     }
     // setter
-    void setFather(State<T>* s) {
-        this->cameFrom = s;
+    void setFather(State<T> s) {
+        State<T>* sFather = s.getFather();
+        this->cameFrom = new State(s.state, s.cost, sFather);
     }
     // destructor
-    ~State() {
-        if (this->cameFrom != NULL) {
+    /*~State() {
+        while (this->cameFrom != NULL) {
             delete(this->cameFrom);
         }
-        delete(this);
-    }
-    // getters
-    T getState() {
-        return this->state;
-    }
-    double getCost() {
-        return this->cost;
-    }
-    T getFather() {
-        return this->cameFrom;
-    }
-    // setter
-    void setFather(State<T>* s) {
-        this->cameFrom = s;
-    }
-    // destructor
-    ~State() {
-        if (this->cameFrom != NULL) {
-            delete(this->cameFrom);
-        }
-        delete(this->state);
-        delete(this);
-    }
+    }*/
 };
 
 #endif //MILESTONE_2_STATE_H
