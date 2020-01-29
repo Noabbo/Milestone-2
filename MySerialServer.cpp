@@ -18,6 +18,7 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
     timeval server_timeout ;
     while (!timeOut) {
         char buffer[1025];
+
         int socketfd = socket(AF_INET, SOCK_STREAM, 0);
         if (socketfd == -1) {
             throw "error - could not create a socket";
@@ -87,7 +88,6 @@ void MySerialServer::open(int port, ClientHandler *clientHandler) {
                 client->handleClient(socketfd);
                 close(socketfd);
                 break;
-
             }
         }
     }

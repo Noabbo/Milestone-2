@@ -26,7 +26,7 @@ namespace boot {
              ClientHandler *client = new MyClientHandler();
              server->open(port, client);
              delete(server);
-             delete(client);         
+             delete(client);
         }
     };
 }
