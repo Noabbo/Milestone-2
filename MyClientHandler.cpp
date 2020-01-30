@@ -26,7 +26,7 @@ void MyClientHandler::handleClient(int socketClient) {
                 cout << "arrive file cache manager" << endl;
                 string name = vectorToString(mat);
                 fstream file;
-                file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
+                file.open(this->fileCacheManager->get(problem), ios::in | ios::binary);
                 if (!file) {
                     throw "Error - file didn't open";
                 }

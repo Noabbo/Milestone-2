@@ -58,7 +58,7 @@ void FileCacheManager::insertSolution(string key, string obj) {
 }
 
 string FileCacheManager::get(string key) {
-    return this->getHashMap().at(to_string(hasher(key)));
+    return this->getFromHashMap(key);
 }
 
 bool FileCacheManager::findSolution(string p) {

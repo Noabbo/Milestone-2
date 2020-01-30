@@ -31,6 +31,9 @@ public:
     virtual void addTohHashMap(Problem key, Solution s) {
         this->hash_map.emplace(make_pair(key, s));
     }
+    virtual Solution getFromHashMap(Problem k) {
+        return this->hash_map.at(k);
+    }
 };
 
 
