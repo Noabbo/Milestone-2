@@ -30,8 +30,7 @@ void FileCacheManager::createProblemFile(string obj) {
         throw ("error - file didn't open");
     }
     // write matrix to file
-    file.write((char*)&obj, sizeof(string));
-    file << "\r\n";
+    file << obj << "\r" << endl;
     // close file
     file.close();
 }
@@ -51,8 +50,7 @@ void FileCacheManager::insertSolution(string key, string obj) {
     // add name of solution file to map
     CacheManager::addTohHashMap(mat, file_name);
     // write solution of matrix to file
-    file.write((char*)&obj, sizeof(string));
-    file << "\r\n";
+    file << obj << "\r" << endl;
     // close file
     file.close();
 }
@@ -65,7 +63,7 @@ bool FileCacheManager::findSolution(string p) {
     unordered_map<string, string> tmpMap = this->getHashMap();
     unordered_map<string, string>::iterator it;
     for (it = tmpMap.begin(); it != tmpMap.end(); ++it) {
-        if (it->first == to_string(hasher(p))) {
+        if (it->first == p) {
             return true;
         }
     }

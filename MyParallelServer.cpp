@@ -6,9 +6,10 @@
 
 void MyParallelServer::open(int port, ClientHandler *clientHandler)
 {
+    cout << "Connection to port " << port << endl;
     //Intialization of the time out
     struct timeval time;
-    time.tv_sec = 60;
+    time.tv_sec = 120;
     time.tv_usec = 0;
 
     //initialization of the socket
@@ -22,7 +23,7 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
     serverAddress.sin_port = htons(port);
     //Case the bind socket doesn't bind to the IP address
     if (bind(socketfd, (struct sockaddr *) &serverAddress, sizeof(serverAddress)) == -1) {
-        throw "Could not bind the socket to an IP";
+        throw "Could not bind the socket";
     }
     //Socket listen to the port
     if (listen(socketfd, 5) == -1) {
@@ -36,7 +37,6 @@ void MyParallelServer::open(int port, ClientHandler *clientHandler)
         int clientSocket = accept(socketfd, (struct sockaddr *) &serverAddress, (socklen_t *) &addrlen);
         if (clientSocket == -1) {
             throw "Error accepting new client or no new client connected";
-            break;
         } else {
             cout << "New client connected" << endl;
             thread thread(&MyParallelServer::thread_adapter, this, clientSocket, clientHandler);

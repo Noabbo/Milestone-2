@@ -14,7 +14,7 @@
 using namespace std;
 
 template<class Problem, class Solution> class CacheManager {
-     unordered_map<Problem, Solution> hash_map;
+    unordered_map<Problem, Solution> hash_map;
 public:
     // searches if the solution has a file
     virtual bool findSolution(Problem p) = 0;

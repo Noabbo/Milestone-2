@@ -16,14 +16,12 @@ void MyClientHandler::handleClient(int socketClient) {
         string endString = buffer;
         auto it = endString.find("\n");
         string line = endString.substr(0, it);
-        //line = removeSpaces(endString);
         if (line.find("end") != string::npos) {
             vector<string> mat;
             mat.assign(data.begin(), data.end() - 2);
             string problem = to_string(hasher(vectorToString(mat)));
             problem += ".txt";
             if (this->fileCacheManager->findSolution(problem)) {
-                cout << "arrive file cache manager" << endl;
                 string name = vectorToString(mat);
                 fstream file;
                 file.open(this->fileCacheManager->get(problem), ios::in | ios::binary);
@@ -45,14 +43,14 @@ void MyClientHandler::handleClient(int socketClient) {
                 solution = this->solver->solve(data);
                 // create file for solution
                 this->fileCacheManager->insertSolution(vectorToString(mat), solution);
-                 //Write into a file all the answers of our matrix with the matrix itself
+                //Write into a file all the answers of our matrix with the matrix itself
                 fstream fileAllMatrix;
                 fileAllMatrix.open("AllMatrixSolutions.txt", ios::app);
                 if (!fileAllMatrix) {
                     throw "error into opening file";
                 }
                 fileAllMatrix << problem << " " <<
-                to_string(hasher(vectorToString(mat))) << "_sol.txt" << endl;
+                              to_string(hasher(vectorToString(mat))) << "_sol.txt" << endl;
                 fileAllMatrix.close();
                 auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
                 if (rel < 0) {
