@@ -14,15 +14,19 @@ void MyClientHandler::handleClient(int socketClient) {
     while (true) {
         read(socketClient, buffer, sizeof(buffer));
         string endString = buffer;
-        string line = removeSpaces(endString);
+        auto it = endString.find("\n");
+        string line = endString.substr(0, it);
+        //line = removeSpaces(endString);
         if (line.find("end") != string::npos) {
             vector<string> mat;
             mat.assign(data.begin(), data.end() - 2);
             string problem = vectorToString(mat);
             problem += ".txt";
             if (this->fileCacheManager->findSolution(problem)) {
+                cout << "arrive file cache manager" << endl;
+                string name = vectorToString(mat);
                 fstream file;
-                file.open(this->fileCacheManager->get(problem), ios::in | ios::binary);
+                file.open(this->fileCacheManager->get(name), ios::in | ios::binary);
                 if (!file) {
                     throw "Error - file didn't open";
                 }
@@ -36,19 +40,18 @@ void MyClientHandler::handleClient(int socketClient) {
                 //The solution need to be calculated
             } else {
                 // create file for matrix
-                this->fileCacheManager->createProblemFile(vectorToString(mat));
+                this->fileCacheManager->createProblemFile(problem);
                 this->solver = new MatrixSolver();
                 solution = this->solver->solve(data);
                 // create file for solution
-                this->fileCacheManager->insertSolution(vectorToString(mat), solution);
+                this->fileCacheManager->insertSolution(problem, solution);
                  //Write into a file all the answers of our matrix with the matrix itself
                 fstream fileAllMatrix;
                 fileAllMatrix.open("AllMatrixSolutions.txt", ios::app);
                 if (!fileAllMatrix) {
                     throw "error into opening file";
                 }
-                fileAllMatrix << vectorToString(mat) << endl;
-                fileAllMatrix << solution << endl;
+                fileAllMatrix << vectorToString(mat) << " " << solution << "_sol.txt" << endl;
                 fileAllMatrix.close();
                 auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
                 if (rel < 0) {
