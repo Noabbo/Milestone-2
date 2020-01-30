@@ -8,7 +8,7 @@ int main(int argc, char *argv[]) {
         if (argv[1] != nullptr) {
             boot::Main().main(stoi(argv[1]));
         } else {
-            boot::Main().main(5400);
+            boot::Main().main(5600);
 
         }
     } catch (char const* e) {
