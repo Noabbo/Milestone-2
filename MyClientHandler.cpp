@@ -51,7 +51,7 @@ void MyClientHandler::handleClient(int socketClient) {
                 if (!fileAllMatrix) {
                     throw "error into opening file";
                 }
-                fileAllMatrix << vectorToString(mat) << " " << solution << "_sol.txt" << endl;
+                fileAllMatrix << problem << ".txt" << " " << solution << "_sol.txt" << endl;
                 fileAllMatrix.close();
                 auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
                 if (rel < 0) {
