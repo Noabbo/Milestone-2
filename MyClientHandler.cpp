@@ -20,7 +20,7 @@ void MyClientHandler::handleClient(int socketClient) {
         if (line.find("end") != string::npos) {
             vector<string> mat;
             mat.assign(data.begin(), data.end() - 2);
-            string problem = vectorToString(mat);
+            string problem = to_string(hasher(vectorToString(mat)));
             problem += ".txt";
             if (this->fileCacheManager->findSolution(problem)) {
                 cout << "arrive file cache manager" << endl;
@@ -51,7 +51,8 @@ void MyClientHandler::handleClient(int socketClient) {
                 if (!fileAllMatrix) {
                     throw "error into opening file";
                 }
-                fileAllMatrix << problem << ".txt" << " " << solution << "_sol.txt" << endl;
+                fileAllMatrix << problem << " " <<
+                to_string(hasher(vectorToString(mat))) << "_sol.txt" << endl;
                 fileAllMatrix.close();
                 auto rel = write(socketClient, solution.c_str(), solution.size() + 1);
                 if (rel < 0) {

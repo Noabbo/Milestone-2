@@ -17,6 +17,7 @@ using namespace std;
 class MyClientHandler : public ClientHandler {
     CacheManager<string, string>* fileCacheManager;
     Solver<vector<string>, string> *solver;
+    hash<string> hasher;
 public:
     virtual void handleClient(int socketClient);
     string vectorToString (vector<string> matrix);
