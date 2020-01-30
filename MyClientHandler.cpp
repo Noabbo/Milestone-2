@@ -40,11 +40,11 @@ void MyClientHandler::handleClient(int socketClient) {
                 //The solution need to be calculated
             } else {
                 // create file for matrix
-                this->fileCacheManager->createProblemFile(problem);
+                this->fileCacheManager->createProblemFile(vectorToString(mat));
                 this->solver = new MatrixSolver();
                 solution = this->solver->solve(data);
                 // create file for solution
-                this->fileCacheManager->insertSolution(problem, solution);
+                this->fileCacheManager->insertSolution(vectorToString(mat), solution);
                  //Write into a file all the answers of our matrix with the matrix itself
                 fstream fileAllMatrix;
                 fileAllMatrix.open("AllMatrixSolutions.txt", ios::app);

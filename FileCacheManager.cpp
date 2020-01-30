@@ -37,8 +37,11 @@ void FileCacheManager::createProblemFile(string obj) {
 }
 
 void FileCacheManager::insertSolution(string key, string obj) {
+    // name of solution file
     string file_name = to_string(hasher(key));
     file_name += "_sol.txt";
+    // name of matrix file
+    string mat = to_string(hasher(key)) + ".txt";
     // open file for new item
     fstream file;
     file.open(file_name, ios::out | ios::binary);
@@ -46,7 +49,7 @@ void FileCacheManager::insertSolution(string key, string obj) {
         throw ("error - file didn't open");
     }
     // add name of solution file to map
-    CacheManager::getHashMap().emplace(make_pair(to_string(hasher(key)), file_name));
+    CacheManager::addTohHashMap(mat, file_name);
     // write solution of matrix to file
     file.write((char*)&obj, sizeof(string));
     file << "\r\n";
